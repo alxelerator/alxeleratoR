@@ -1,9 +1,9 @@
 # alxeleratoR
 
-Public R package to assist data analysis, mostly focused on using phyloseq or similar objects.  
-This package evolved from my need to automate common analyses and visualizations. Most functions are wrappers around existing functions or packages, some are original creations, and others are "borrowed" and adapted to my needs (with credit given as accurately as possible). If you think I’ve forgotten to credit you, please drop me a message.  
+Public R package to **accelerate** data analysis, so you can focus on interpretation during data exploration instead of finding out how to code your question.  
+Most functions focus on using phyloseq or similar objects. This "package"/bundle evolved from my need to automate and share common analyses and visualizations. Most functions are wrappers around existing functions or packages, some are original creations, and others are "borrowed" and adapted to my needs (with credit given as accurately as possible). If you think I’ve forgotten to credit you, please drop me a message.  
 
-The primary context is microbiome, resistome, metagenomics, and eDNA research.
+The primary context is microbiome, resistome, metagenomics, and eDNA research. But feel free to use them in different contexts.
 
 This package/repository is maintained by:  
 * **Alex Bossers** (creator)  
