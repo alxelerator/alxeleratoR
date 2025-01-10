@@ -21,3 +21,11 @@ This project is licensed under the [GNU General Public License](https://www.gnu.
 The current version(s) of this package are primarily tailored to my own needs and may be subject to changes. While I will strive to ensure backward compatibility, this is not guaranteed (including for defaults).  
 
 The use of these functions is entirely at your own risk. You should always validate the outcomes, as they may contain errors or inaccuracies. Neither I, any collaborators, nor the associated institutions can be held liable for any direct or indirect damage caused by the use of this package. Proceed with caution and ensure thorough validation when integrating this package into your workflow.  
+
+## Installation
+ToDo
+
+## Documentation
+Function details are covered by each function's documentation.  
+
+ToDo overview functions
