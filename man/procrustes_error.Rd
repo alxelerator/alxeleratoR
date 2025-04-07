@@ -2,7 +2,7 @@
 % Please edit documentation in R/procrustes_error.R
 \name{procrustes_error}
 \alias{procrustes_error}
-\title{Plot Procrustes residuals}
+\title{Plot calculated procrustes residuals}
 \usage{
 procrustes_error(df = "", proc_df, main = "Procrustes residuals")
 }
@@ -17,7 +17,7 @@ procrustes_error(df = "", proc_df, main = "Procrustes residuals")
 Base R plot
 }
 \description{
-Plot Procrustes residuals
+Plot calculated procrustes residuals
 }
 \note{
 Uses the data from procrustes vegan package

@@ -1,4 +1,4 @@
-#' Function override of microbiomeseq! to calculate pair-wise anovas allowing more options and Welch-ANOVA
+#' Function override in of microbiomeseq to calculate pair-wise anovas allowing more options and Welch-ANOVA
 #'
 #' @param df dataframe
 #' @param meta_table the metadata df

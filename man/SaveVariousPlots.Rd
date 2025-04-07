@@ -2,9 +2,7 @@
 % Please edit documentation in R/saveVariousPlots.R
 \name{SaveVariousPlots}
 \alias{SaveVariousPlots}
-\title{Saves ggplot plots
-with reasonable defaults in png and svg
-png has explicit white background (transparency off)}
+\title{Saves ggplot plots with reasonable defaults in png and svg (png has explicit white background (transparency off))}
 \usage{
 SaveVariousPlots(
   filename_base,

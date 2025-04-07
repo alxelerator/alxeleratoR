@@ -2,9 +2,7 @@
 % Please edit documentation in R/permanova2.R
 \name{permanova2}
 \alias{permanova2}
-\title{Single (multivariable) PERMANOVA v2
-Uses vegan::adonis2.
-This function is just a convenience wrapper for vegan::adonis2. Please give proper credits to those authors.}
+\title{Single (multivariable) PERMANOVA v2 Uses vegan::adonis2. This function is just a convenience wrapper for vegan::adonis2.}
 \usage{
 permanova2(
   physeq = "",

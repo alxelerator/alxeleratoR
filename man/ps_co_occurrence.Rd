@@ -2,7 +2,7 @@
 % Please edit documentation in R/ps_co_occurrence.R
 \name{ps_co_occurrence}
 \alias{ps_co_occurrence}
-\title{Calculate the co-occurrence of taxa (pair-wise) between one or two tax tables}
+\title{Calculate the co-occurrence of taxa (pair-wise) between one or two tax tables in phyloseq objects}
 \usage{
 ps_co_occurrence(
   ps_x = "",

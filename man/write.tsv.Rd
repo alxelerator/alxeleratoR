@@ -2,7 +2,7 @@
 % Please edit documentation in R/write.tsv.R
 \name{write.tsv}
 \alias{write.tsv}
-\title{write table using tabular tab seperators}
+\title{Write data.frame to file using tabular tab separators.}
 \usage{
 write.tsv(dataToWrite, filename, sep = "\\t", quote = FALSE, row.names = TRUE)
 }
@@ -18,7 +18,7 @@ write.tsv(dataToWrite, filename, sep = "\\t", quote = FALSE, row.names = TRUE)
 \item{row.names}{Boolean, Add row names. Default TRUE}
 }
 \description{
-write table using tabular tab seperators
+Write data.frame to file using tabular tab separators.
 }
 \author{
 Alex Bossers \email{a.bossers@uu.nl}

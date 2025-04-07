@@ -1,6 +1,4 @@
-#' Convenience function/wrapper to ggplot alpha diversity combined with pair-wise ANOVA 
-#' using a (rarefied) phyloseq object as a starter.
-#' Classic or Wlech ANOVA supported.
+#' Convenience wrapper to ggplot alpha diversity combined with pair-wise ANOVA using a (rarefied) phyloseq object as a starter. Classic or Welch ANOVA supported.
 #'
 #' @param physeq phyloseq object of microbiome data
 #' @param method methods can be c("richness", "fisher", "simpson", "invsimpson", "shannon", "evenness", "pd")

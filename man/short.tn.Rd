@@ -2,7 +2,7 @@
 % Please edit documentation in R/short.tn.R
 \name{short.tn}
 \alias{short.tn}
-\title{Alx: shorten too long temp OTU names}
+\title{Shorten too long temp OTU names from provided vector.}
 \usage{
 short.tn(original)
 }
@@ -13,7 +13,7 @@ short.tn(original)
 shortened string
 }
 \description{
-Alx: shorten too long temp OTU names
+Shorten too long temp OTU names from provided vector.
 }
 \author{
 a.bossers@uu.nl

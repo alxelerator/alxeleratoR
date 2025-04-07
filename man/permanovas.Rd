@@ -2,7 +2,7 @@
 % Please edit documentation in R/permanovas.R
 \name{permanovas}
 \alias{permanovas}
-\title{Multiple Permanovas}
+\title{\link{deprecated} Multiple Permanovas on phyloseq (adonis1)}
 \usage{
 permanovas(
   physeq,

@@ -2,7 +2,7 @@
 % Please edit documentation in R/plot_procrustes.R
 \name{plot_procrustes}
 \alias{plot_procrustes}
-\title{Plot the procrustus overlay}
+\title{Plot calculated procrustus overlay}
 \usage{
 plot_procrustes(
   x,
@@ -48,7 +48,7 @@ plot_procrustes(
 Base R plot
 }
 \description{
-Plot the procrustus overlay
+Plot calculated procrustus overlay
 }
 \note{
 Uses the data from procrustes vegan package

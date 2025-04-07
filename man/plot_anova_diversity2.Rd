@@ -2,9 +2,7 @@
 % Please edit documentation in R/plot_anova_diversity2.R
 \name{plot_anova_diversity2}
 \alias{plot_anova_diversity2}
-\title{Convenience function/wrapper to ggplot alpha diversity combined with pair-wise ANOVA
-using a (rarefied) phyloseq object as a starter.
-Classic or Wlech ANOVA supported.}
+\title{Convenience wrapper to ggplot alpha diversity combined with pair-wise ANOVA using a (rarefied) phyloseq object as a starter. Classic or Welch ANOVA supported.}
 \usage{
 plot_anova_diversity2(
   physeq,
@@ -58,9 +56,7 @@ list of [\link{1}] $plot = ggplot figure, [\link{2}] $anova = pair-wise ANOVA ta
 Optional tabular data file on disk if \code{outfile} is given
 }
 \description{
-Convenience function/wrapper to ggplot alpha diversity combined with pair-wise ANOVA
-using a (rarefied) phyloseq object as a starter.
-Classic or Wlech ANOVA supported.
+Convenience wrapper to ggplot alpha diversity combined with pair-wise ANOVA using a (rarefied) phyloseq object as a starter. Classic or Welch ANOVA supported.
 }
 \author{
 Alex Bossers \email{a.bossers@uu.nl}

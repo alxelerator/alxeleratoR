@@ -2,7 +2,7 @@
 % Please edit documentation in R/tax_glom2.R
 \name{tax_glom2}
 \alias{tax_glom2}
-\title{Agglomerate taxa of the same type.}
+\title{Agglomerate taxa using dplyr optimed tax_glom function from phyloseq.}
 \usage{
 tax_glom2(physeq, taxrank=rank_names(physeq)[1], NArm=FALSE,
 bad_empty=c(NA, "", " ", "\t"))
@@ -41,7 +41,6 @@ A taxonomically-agglomerated, optionally-pruned, object with class matching
 the class of \code{physeq}.
 }
 \description{
-tax_glom2
 tidyr speedy implementation of taxglom from phyloseq itself
 }
 \examples{

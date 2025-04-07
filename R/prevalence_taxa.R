@@ -1,5 +1,4 @@
-#' Calculate the prevalence of phyloseq object at lowest taxonomic rank (i.e. ASV)
-#' Function is used in the prevalence_plot() function
+#' Calculate the prevalence at lowest taxonomic rank (i.e. ASV) from phyloseq. Function is used in the prevalence_plot() function
 #'
 #' Function will return a prevalence data frame from each OTU
 #' N occurences in samples (y) and total abundance (x)

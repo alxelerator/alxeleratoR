@@ -1,4 +1,4 @@
-#' Plot prevalence plots of phyloseq object at indicated taxonomic rank
+#' Plot prevalence plots of certain taxonomic rank from phyloseq object
 #'
 #' Function will return a prevalence plot from each OTU
 #' N occurences in samples (y) and total abundance (x)

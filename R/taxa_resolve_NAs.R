@@ -1,4 +1,4 @@
-#' Using a given phyloseq object, take the taxonomy_table and fill any NAs with known higher level taxonomic data adding tax level k__ p__ f__ g__ etc
+#' Replace any NAs in taxonomy_table (phyloseq) with known higher level taxonomic data adding tax level k__ p__ f__ g__ etc
 #'
 #' @param ps phyloseqobject
 #' @param verbose Default TRUE. Shows diff first 10 taxa before and after

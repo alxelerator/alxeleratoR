@@ -2,7 +2,7 @@
 % Please edit documentation in R/simper.pretty2.R
 \name{simper.pretty2}
 \alias{simper.pretty2}
-\title{simper.pretty2 is a debugged version that expects a phyloseq object and handles the OTU table correctly.}
+\title{Perform SIMPER and return pretty output using phyloseq (debugged).}
 \usage{
 simper.pretty2(
   ps,
@@ -32,7 +32,7 @@ simper.pretty2(
 Alex: cores can be specified to limit used cores otherwise all available are used (minus 2)!}
 }
 \description{
-simper.pretty2 is a debugged version that expects a phyloseq object and handles the OTU table correctly.
+Perform SIMPER and return pretty output using phyloseq (debugged).
 }
 \author{
 a.bossers@uu.nl

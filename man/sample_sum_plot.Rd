@@ -2,8 +2,7 @@
 % Please edit documentation in R/sample_sum_plot.R
 \name{sample_sum_plot}
 \alias{sample_sum_plot}
-\title{Make a ggplot of sample sums per sample ordered decreasing by sample sum and indicate 90\% rarefy number
-Only makes a plot for inspection and play with parameters. No rarefaction or filtering is done}
+\title{Make a (coloured) ggplot of sample sums per sample ordered decreasing by sample sum and some stats like 90\% rarefy number on phyloseq}
 \usage{
 sample_sum_plot(
   ps = merged,
@@ -49,8 +48,7 @@ sample_sum_plot(
 ggplot_object
 }
 \description{
-Make a ggplot of sample sums per sample ordered decreasing by sample sum and indicate 90\% rarefy number
-Only makes a plot for inspection and play with parameters. No rarefaction or filtering is done
+Make a (coloured) ggplot of sample sums per sample ordered decreasing by sample sum and some stats like 90\% rarefy number on phyloseq
 }
 \author{
 \email{a.bossers@uu.nl}

@@ -2,9 +2,7 @@
 % Please edit documentation in R/pairwise.permanovas2.R
 \name{pairwise.permanovas2}
 \alias{pairwise.permanovas2}
-\title{Pairwise PERMANOVAs
-Allows to find which pairs of a more complete set are significantly different in PERMANOVA
-Using adonis2}
+\title{Pairwise PERMANOVAs (adonis2) on phyloseq to find which pairs of a more complete set have significantly different community structures}
 \usage{
 pairwise.permanovas2(
   ps,
@@ -39,9 +37,7 @@ pairwise.permanovas2(
 a table with the pairwise factors, F-values, R^2, p.value and adjusted p.values
 }
 \description{
-Pairwise PERMANOVAs
-Allows to find which pairs of a more complete set are significantly different in PERMANOVA
-Using adonis2
+Pairwise PERMANOVAs (adonis2) on phyloseq to find which pairs of a more complete set have significantly different community structures
 }
 \note{
 Based initially on a function by Pedro Martinez Arbizu

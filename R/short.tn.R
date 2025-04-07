@@ -1,4 +1,4 @@
-#' Alx: shorten too long temp OTU names
+#' Shorten too long temp OTU names from provided vector.
 #' @author a.bossers@uu.nl
 #' @author scavenged from / inspired by https://peerj.com/articles/545/#fig-1
 #'

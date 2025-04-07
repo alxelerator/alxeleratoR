@@ -1,4 +1,4 @@
-#' kruskal.pretty2
+#' Calculates the Kruskal-Wallis rank-sum test on SIMPER pretty output
 #' 
 #' Debugged, changed and extended to allow an phyloseq object and tax rank selection
 #' 

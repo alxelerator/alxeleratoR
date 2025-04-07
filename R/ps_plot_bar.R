@@ -1,4 +1,4 @@
-#' A convenience wrapper to generate tuned barplots at various taxonomic levels using phyloseq input
+#' Convenience wrapper to generate tuned and sorted barplots at various taxonomic levels from phyloseq input
 #'
 #' @param ps phyloseq object
 #' @param taxrank taxonomic rank to show (default "Phylum")

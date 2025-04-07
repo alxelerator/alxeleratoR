@@ -1,5 +1,5 @@
-#' 
-#' simper.pretty2 is a debugged version that expects a phyloseq object and handles the OTU table correctly.
+#' Perform SIMPER and return pretty output using phyloseq (debugged).
+#'
 #' @author a.bossers@uu.nl
 #' 
 #' What it does:

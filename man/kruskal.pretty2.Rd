@@ -2,7 +2,7 @@
 % Please edit documentation in R/kruskal_pretty2.R
 \name{kruskal.pretty2}
 \alias{kruskal.pretty2}
-\title{kruskal.pretty2}
+\title{Calculates the Kruskal-Wallis rank-sum test on SIMPER pretty output}
 \usage{
 kruskal.pretty2(ps, csv, interesting, output_name, taxrank = "")
 }

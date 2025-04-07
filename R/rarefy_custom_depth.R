@@ -1,5 +1,4 @@
-#' A convenience function to rarefy a given phyloseq object not to one value for each sample
-#' but to allow to rarefy each sample with its own given rarefy target depth.
+#' Convenience function to rarefy a given phyloseq object not to one value for each sample but to allow to rarefy each sample with its own given rarefy target depth.
 #'
 #' Why? In the exceptional case when you want to proportionally rarefy the data to correct for instance for input volume differences
 #' which may be the case in semi-quantitative measurements of the resistome. Since with resistome for example we do not always want to

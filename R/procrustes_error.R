@@ -1,4 +1,4 @@
-#' Plot Procrustes residuals
+#' Plot calculated procrustes residuals
 #'
 #' @param df <deprecated> do not use. For backward compatibility only.
 #' @param proc_df the procrustus data frame (from vegan)

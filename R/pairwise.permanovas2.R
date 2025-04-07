@@ -1,6 +1,4 @@
-#' Pairwise PERMANOVAs
-#' Allows to find which pairs of a more complete set are significantly different in PERMANOVA
-#' Using adonis2
+#' Pairwise PERMANOVAs (adonis2) on phyloseq to find which pairs of a more complete set have significantly different community structures
 #'
 #' @param ps phyloseqobject
 #' @param metadata variable (factor) all factors to be tested pairwise

@@ -1,4 +1,4 @@
-#' Plot the procrustus overlay
+#' Plot calculated procrustus overlay
 #'
 #' @param x ordinations
 #' @param kind default = 1

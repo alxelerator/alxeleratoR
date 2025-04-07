@@ -1,4 +1,4 @@
-#' Phylodiv: phylogenetic diversity
+#' Phylodiv calculates phylogenetic diversity from phyloseq (req tree)
 #'
 #' @param physeq phyloseq class object, from which phylogeny and abundance data are extracted
 #' @param theta parameter that determines the balance in the Balance Weighted Phylogenetic Diversity (see McCoy and Matsen, 2013)

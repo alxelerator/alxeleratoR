@@ -1,4 +1,4 @@
-#' Pairwise PERMANOVAs
+#' [deprecated] Calculate pairwise PERMANOVAs on phyloseq.
 #'
 #' NOT SURE IF THIS FUNCTION STILL MAKES SENSE. KEPT just in case from SJurburg
 #' @note DEPRECATED function

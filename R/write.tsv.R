@@ -1,4 +1,5 @@
-#' write table using tabular tab seperators
+#' Write data.frame to file using tabular tab separators.
+#'
 #' @param dataToWrite dataframe
 #' @param filename filename and path
 #' @param sep Field separator to use. Default is tab.

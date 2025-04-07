@@ -2,9 +2,7 @@
 % Please edit documentation in R/shortASVs.R
 \name{shortASVs}
 \alias{shortASVs}
-\title{Move the ASV sequence as sequence_name into the ps refseq slot of the phyloseq object
-In addition shorten the taxa names to ASV0001 etc
-Default we will also add the ASV seq as lowest tax level in the taxonomy_table}
+\title{Move ASV sequence as sequence_name into the phyloseq refseq slot. Also shorten the taxa names to Hashed-sequences or ASV0001 etc}
 \usage{
 shortASVs(ps, in.taxonomy = TRUE, method = "hash")
 }

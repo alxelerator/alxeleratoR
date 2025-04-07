@@ -1,4 +1,4 @@
-#' Melt phyloseq data object into large data.frame
+#' Phyloseq psmelt() dplyr optimised for large datasets
 #'
 #' psmelt2
 #' tidyr speedy implementation of psmelt from phyloseq itself

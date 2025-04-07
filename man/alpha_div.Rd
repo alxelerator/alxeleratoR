@@ -2,7 +2,7 @@
 % Please edit documentation in R/alpha_div.R
 \name{alpha_div}
 \alias{alpha_div}
-\title{scavenged from microbiome seq to allow tweaking}
+\title{Calculate alpha diversity metrics on a phyloseq object}
 \usage{
 alpha_div(physeq, method, rarefy.override = 0)
 }
@@ -17,7 +17,7 @@ alpha_div(physeq, method, rarefy.override = 0)
 dataframe
 }
 \description{
-scavenged from microbiome seq to allow tweaking
+Calculate alpha diversity metrics on a phyloseq object
 }
 \note{
 Updates:

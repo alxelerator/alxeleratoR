@@ -1,6 +1,4 @@
-#' Saves ggplot plots 
-#' with reasonable defaults in png and svg
-#' png has explicit white background (transparency off)
+#' Saves ggplot plots with reasonable defaults in png and svg (png has explicit white background (transparency off))
 #'
 #' Figures look great when using cowplot theme as default.
 #'

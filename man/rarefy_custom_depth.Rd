@@ -2,8 +2,7 @@
 % Please edit documentation in R/rarefy_custom_depth.R
 \name{rarefy_custom_depth}
 \alias{rarefy_custom_depth}
-\title{A convenience function to rarefy a given phyloseq object not to one value for each sample
-but to allow to rarefy each sample with its own given rarefy target depth.}
+\title{Convenience function to rarefy a given phyloseq object not to one value for each sample but to allow to rarefy each sample with its own given rarefy target depth.}
 \usage{
 rarefy_custom_depth(physeq, rarefy_depth, seed = 2202)
 }

@@ -2,7 +2,7 @@
 % Please edit documentation in R/perform_anova.R
 \name{perform_anova}
 \alias{perform_anova}
-\title{Function override of microbiomeseq! to calculate pair-wise anovas allowing more options and Welch-ANOVA}
+\title{Function override in of microbiomeseq to calculate pair-wise anovas allowing more options and Welch-ANOVA}
 \usage{
 perform_anova(
   df,
@@ -27,7 +27,7 @@ perform_anova(
 list
 }
 \description{
-Function override of microbiomeseq! to calculate pair-wise anovas allowing more options and Welch-ANOVA
+Function override in of microbiomeseq to calculate pair-wise anovas allowing more options and Welch-ANOVA
 }
 \note{
 For Welch-ANOVA we use the \href{https://www.rdocumentation.org/packages/rstatix}{rstatix package}.

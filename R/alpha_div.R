@@ -1,4 +1,4 @@
-#' scavenged from microbiome seq to allow tweaking
+#' Calculate alpha diversity metrics on a phyloseq object
 #'
 #' @param physeq phyloseq with microbiome data
 #' @param method string or vector of strings and can be one or more from ("richness", "fisher", "simpson", "invsimpson", shannon", "evenness", "pd")

@@ -1,6 +1,5 @@
-#' Agglomerate taxa of the same type.
+#' Agglomerate taxa using dplyr optimed tax_glom function from phyloseq.
 #'
-#' tax_glom2
 #' tidyr speedy implementation of taxglom from phyloseq itself
 #'
 #' @author scavenged 4 May 2019 from: https://github.com/mikemc/speedyseq/tree/master/R

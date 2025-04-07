@@ -2,7 +2,7 @@
 % Please edit documentation in R/ps_plot_bar.R
 \name{ps_plot_bar}
 \alias{ps_plot_bar}
-\title{A convenience wrapper to generate tuned barplots at various taxonomic levels using phyloseq input}
+\title{Convenience wrapper to generate tuned and sorted barplots at various taxonomic levels from phyloseq input}
 \usage{
 ps_plot_bar(
   ps,
@@ -72,7 +72,7 @@ ps_plot_bar(
 ggplot figure
 }
 \description{
-A convenience wrapper to generate tuned barplots at various taxonomic levels using phyloseq input
+Convenience wrapper to generate tuned and sorted barplots at various taxonomic levels from phyloseq input
 }
 \note{
 Updates:

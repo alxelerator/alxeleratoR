@@ -2,8 +2,7 @@
 % Please edit documentation in R/prevalence_taxa.R
 \name{prevalence_taxa}
 \alias{prevalence_taxa}
-\title{Calculate the prevalence of phyloseq object at lowest taxonomic rank (i.e. ASV)
-Function is used in the prevalence_plot() function}
+\title{Calculate the prevalence at lowest taxonomic rank (i.e. ASV) from phyloseq. Function is used in the prevalence_plot() function}
 \usage{
 prevalence_taxa(ps, prev_relative = FALSE)
 }

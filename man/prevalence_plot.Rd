@@ -2,7 +2,7 @@
 % Please edit documentation in R/prevalence_plot.R
 \name{prevalence_plot}
 \alias{prevalence_plot}
-\title{Plot prevalence plots of phyloseq object at indicated taxonomic rank}
+\title{Plot prevalence plots of certain taxonomic rank from phyloseq object}
 \usage{
 prevalence_plot(
   ps,

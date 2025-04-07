@@ -2,7 +2,7 @@
 % Please edit documentation in R/phylodiv.R
 \name{phylodiv}
 \alias{phylodiv}
-\title{Phylodiv: phylogenetic diversity}
+\title{Phylodiv calculates phylogenetic diversity from phyloseq (req tree)}
 \usage{
 phylodiv(physeq, theta = 0)
 }
@@ -16,7 +16,7 @@ Theta = 0 corresponds to Faith's PD}
 dataframe
 }
 \description{
-Phylodiv: phylogenetic diversity
+Phylodiv calculates phylogenetic diversity from phyloseq (req tree)
 }
 \note{
 Requires a phylogenetic tree in your phyloseq object!

@@ -2,7 +2,7 @@
 % Please edit documentation in R/psmelt2.R
 \name{psmelt2}
 \alias{psmelt2}
-\title{Melt phyloseq data object into large data.frame}
+\title{Phyloseq psmelt() dplyr optimised for large datasets}
 \usage{
 psmelt(physeq)
 }

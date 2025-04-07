@@ -2,7 +2,7 @@
 % Please edit documentation in R/taxa_resolve_NAs.R
 \name{taxa_resolve_NAs}
 \alias{taxa_resolve_NAs}
-\title{Using a given phyloseq object, take the taxonomy_table and fill any NAs with known higher level taxonomic data adding tax level k__ p__ f__ g__ etc}
+\title{Replace any NAs in taxonomy_table (phyloseq) with known higher level taxonomic data adding tax level k__ p__ f__ g__ etc}
 \usage{
 taxa_resolve_NAs(ps, verbose = TRUE, genusspecies = TRUE)
 }
@@ -17,7 +17,7 @@ taxa_resolve_NAs(ps, verbose = TRUE, genusspecies = TRUE)
 NA replaced phyloseq object
 }
 \description{
-Using a given phyloseq object, take the taxonomy_table and fill any NAs with known higher level taxonomic data adding tax level k__ p__ f__ g__ etc
+Replace any NAs in taxonomy_table (phyloseq) with known higher level taxonomic data adding tax level k__ p__ f__ g__ etc
 }
 \note{
 Version log:

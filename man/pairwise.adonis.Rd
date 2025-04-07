@@ -2,7 +2,7 @@
 % Please edit documentation in R/pairwise.adonis.R
 \name{pairwise.adonis}
 \alias{pairwise.adonis}
-\title{Pairwise PERMANOVAs}
+\title{\link{deprecated} Calculate pairwise PERMANOVAs on phyloseq.}
 \usage{
 pairwise.adonis(
   x,

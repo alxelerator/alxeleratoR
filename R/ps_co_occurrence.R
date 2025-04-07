@@ -1,4 +1,4 @@
-#' Calculate the co-occurrence of taxa (pair-wise) between one or two tax tables
+#' Calculate the co-occurrence of taxa (pair-wise) between one or two tax tables in phyloseq objects
 #' 
 #' Alex adapted to fit two different matrices to test co-occurrences (i.e. bacteria to resistome)
 #'    Also implemented multiple testing corrections

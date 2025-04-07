@@ -1,4 +1,4 @@
-#' Multiple Permanovas
+#' [deprecated] Multiple Permanovas on phyloseq (adonis1)
 #'
 #' Function performs individual, \code{\link{adonis}}-style permanovas for every/selected elements of \code{sample_variables(physeq)}
 #'

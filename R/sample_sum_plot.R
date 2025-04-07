@@ -1,5 +1,4 @@
-#' Make a ggplot of sample sums per sample ordered decreasing by sample sum and indicate 90% rarefy number
-#' Only makes a plot for inspection and play with parameters. No rarefaction or filtering is done
+#' Make a (coloured) ggplot of sample sums per sample ordered decreasing by sample sum and some stats like 90% rarefy number on phyloseq
 #'
 #' @param ps phyloseq object
 #' @param percentKeep default 90. Percentage of samples to keep at rarefaction cutoff indication
