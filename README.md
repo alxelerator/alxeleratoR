@@ -23,9 +23,10 @@ The current version(s) of this package are primarily tailored to my own needs an
 The use of these functions is entirely at your own risk. You should always validate the outcomes, as they may contain errors or inaccuracies. Neither I, any collaborators, nor the associated institutions can be held liable for any direct or indirect damage caused by the use of this package. Proceed with caution and ensure thorough validation when integrating this package into your workflow.  
 
 ## Installation
-ToDo
+In R run `devtools::install_github("alxelerator/alxeleratoR")`
 
 ## Documentation
 Function details are covered by each function's documentation.  
 
 ToDo overview functions
+ToDo overview to credit initially scavenged functions (used as a basis)
