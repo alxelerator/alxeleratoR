@@ -14,4 +14,4 @@ RoxygenNote: 7.3.2
 Imports:
     Biostrings, RColorBrewer, dplyr, foreach, ggplot2,
     openssl, pals, phyloseq, reshape2, rstatix, scales,
-    stringr, vegan
+    stringr, vegan, cowplot

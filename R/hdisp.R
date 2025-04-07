@@ -7,7 +7,7 @@
 #' @param vars selected variables from the ps object (should be type factor and 2 or more levels). Default uses all.
 #' @param hellinger default=TRUE. Performs Hellinger transformation on the otu table.
 #' 
-#' @return function prints a list of p-values and returns a list of \code{betadisper} outputs which can be examined with \code{output[[x]]} to view the output for the xth element of \code{sample_data(physeq)}
+#' @return function prints a list of p-values and returns a list of \code{betadisper} 
 #'
 #' @import phyloseq
 #' @import vegan
@@ -18,6 +18,7 @@
 #' @examples
 #' q <- hdisp(physeq, distm="bray", vars=c("Type","Date","Health"))
 #' plot(q[[1]])
+#' # outputs which can be examined with 
 #'
 #' @author Alex Bossers \email{a.bossers@uu.nl}
 #'

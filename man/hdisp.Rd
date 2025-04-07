@@ -16,7 +16,7 @@ hdisp(physeq, distm = "bray", vars = NULL, hellinger = TRUE)
 \item{hellinger}{default=TRUE. Performs Hellinger transformation on the otu table.}
 }
 \value{
-function prints a list of p-values and returns a list of \code{betadisper} outputs which can be examined with \code{output[[x]]} to view the output for the xth element of \code{sample_data(physeq)}
+function prints a list of p-values and returns a list of \code{betadisper}
 }
 \description{
 Function performs individual, \code{\link{betadisper}}-type tests for homogeneity of dispersions for every element of \code{sample_variables(physeq)}. Community matrix is Hellinger-transformed prior to the calculation of distances using specified matrix.
@@ -24,6 +24,7 @@ Function performs individual, \code{\link{betadisper}}-type tests for homogeneit
 \examples{
 q <- hdisp(physeq, distm="bray", vars=c("Type","Date","Health"))
 plot(q[[1]])
+# outputs which can be examined with 
 
 }
 \author{

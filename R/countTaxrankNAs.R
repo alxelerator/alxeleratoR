@@ -19,7 +19,7 @@ countTaxrankNAs <- function( ps, filename="" )
   if( filename > "") { 
       write_tsv(overall, paste0(filename)) 
     } else {
-      write_tsv(overall, "TotalNAtaxaAtTaxonomicLevelsOverall.tab") }
+      write_tsv(overall, "TotalNAtaxaAtTaxonomicLevelsOverall.tab") 
     }
   return(overall)
 }
