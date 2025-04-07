@@ -1,6 +1,6 @@
 Package: alxeleratoR
 Title: R package to assist data analysis mostly focused toward phyloseq objects
-Version: 0.1.0.001
+Version: 0.8.1.000
 Authors@R: 
     person("Alex", "Bossers", , "a.bossers@uu.nl", role = c("aut", "cre"))
 Description: 
