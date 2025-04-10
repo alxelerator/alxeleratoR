@@ -56,7 +56,7 @@ prevalence_taxa() | Calculate the prevalence at lowest taxonomic rank (i.e. ASV)
 procrustes_error() | Plot calculated procrustes residuals
 psmelt2() | Phyloseq psmelt() dplyr optimised for large datasets
 ps_co_occurrence() | Calculate the co-occurrence of taxa (pair-wise) between one or two tax tables in phyloseq objects
-ps_plot_bar() | Convenience wrapper to generate tuned and sorted barplots at various taxonomic levels from phyloseq input
+ps_plot_bar() | Convenience wrapper to generate tuned and stack-sorted barplots at various taxonomic levels from phyloseq input
 rarefy_custom_depth() | Convenience function to rarefy a given phyloseq object not to one value for each sample but to allow to rarefy each sample with its own given rarefy target depth.
 sample_sum_plot() | Make a (coloured) ggplot of sample sums per sample ordered decreasing by sample sum and some stats like 90% rarefy number on phyloseq
 SaveVariousPlots() | Saves ggplot plots with reasonable defaults in png and svg (png has explicit white background (transparency off))
