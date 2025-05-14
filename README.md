@@ -23,8 +23,8 @@ The use of these functions is entirely at your own risk. You should always valid
 In R run `devtools::install_github("alxelerator/alxeleratoR")`  
 After loading the package `library(alxeleratoR)` you can set some convenient defaults using `alxinit()`
 
-If you need to install some missing packages I can strongly recommend the use of BioConductor package management installed using `install.packages("BiocManager")`  
-For instance `BiocManager::install(c("tidyverse", "phyloseq", "pals", "cowplot", "RColorBrewer", "foreach", "openssl", "Biostrings", "rstatix", "scales", "vegan"))`  
+If you need to install some missing packages I can strongly recommend the use of BioConductor package management. Install it using `install.packages("BiocManager")` or update using `BiocManager::install()`    
+For instance these packages are required for the full experience `BiocManager::install(c("tidyverse", "phyloseq", "pals", "cowplot", "RColorBrewer", "foreach", "openssl", "Biostrings", "rstatix", "scales", "vegan"))`  
 
 ## Documentation
 Function details are covered by each function's documentation.  
