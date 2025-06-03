@@ -33,6 +33,7 @@ Alphabetic overview of provided functions
 
 Function | What it should do 
 --- | --- 
+alxinit() | Set some convenient environmental variables and load a clean publication-ready ggplot2 theme (cowplot)
 alpha_div() | Calculate alpha diversity metrics on a phyloseq object.
 cal_log1p_score() | Calculate recalibration matrix for heatmaps Apply transformation function of log avoiding 0 (1p).
 cal_z_score() | Calculate recalibration matrix for heatmaps Apply transformation function Z score is difference to mean divided by sd.
