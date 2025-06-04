@@ -28,6 +28,8 @@
 #' @import parallel
 #' @import phyloseq
 #'
+#' @export
+#'
 #' @author Alex Bossers \email{a.bossers@uu.nl}
 #'
 #' @author gauravsk: The original unmodified ggrare function was scavenged from: https://rdrr.io/github/gauravsk/ranacapa/man/ggrare.html
