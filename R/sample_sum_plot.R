@@ -20,6 +20,8 @@
 #' @import phyloseq
 #' @import ggplot2
 #' @import scales
+#'
+#' @export
 
 sample_sum_plot <- function( ps=merged, percentKeep = 90, cutoff = FALSE, numberKeep = FALSE, 
                              logy=TRUE, color="", size.points=3,
