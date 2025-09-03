@@ -8,8 +8,10 @@ The primary context is microbiome, resistome, metagenomics, and eDNA research. B
 
 This package/repository is maintained by:  
 * **Alex Bossers** (creator)  
-  + One Health Microbial Group, Institute for Risk Assessment Sciences, Utrecht University, NL ([a.bossers@uu.nl](mailto:a.bossers@uu.nl))  
-  + PathogenOmics and Bioinformatics Group, Wageningen BioVeterinary Research, NL ([alex.bossers@wur.nl](mailto:alex.bossers@wur.nl))  
+  + One Health Microbial Group, Institute for Risk Assessment Sciences, Utrecht University, NL   
+  + PathogenOmics and Bioinformatics Group, Wageningen BioVeterinary Research, NL 
+* **Peter Scherpenisse**
+  + One Health Microbial Group, Institute for Risk Assessment Sciences, Utrecht University, NL 
 * **You?**  
 
 Any additions or bug fixes are more than welcome!  
