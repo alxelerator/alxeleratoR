@@ -5,7 +5,7 @@
 \title{Saves ggplot plots with reasonable defaults in png and svg (png has explicit white background (transparency off))}
 \usage{
 SaveVariousPlots(
-  filename_base,
+  filename_base = "",
   plotobj,
   scale = 1.5,
   width = 40,
@@ -16,6 +16,8 @@ SaveVariousPlots(
 )
 }
 \arguments{
+\item{filename_base}{the filename base to save the figures}
+
 \item{plotobj}{ggplot image object}
 
 \item{scale}{default 1.5}
@@ -29,8 +31,6 @@ SaveVariousPlots(
 \item{bg_png}{default png background white (alternative "transparent" or a color)}
 
 \item{filetype}{override to custom ggsave filetype (default "")}
-
-\item{filename}{the filename base to save the figures}
 }
 \value{
 ggplot figures saved in png (quick pastes) and svg (vector graphics) or alternative with custom ggplot2 filetype

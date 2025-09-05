@@ -5,7 +5,7 @@
 \title{Make a (coloured) ggplot of sample sums per sample ordered decreasing by sample sum and some stats like 90\% rarefy number on phyloseq}
 \usage{
 sample_sum_plot(
-  ps = merged,
+  ps,
   percentKeep = 90,
   cutoff = FALSE,
   numberKeep = FALSE,

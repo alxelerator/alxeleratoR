@@ -23,7 +23,7 @@ Optional the prevalence can be relative (abundance divided by N samples)'
 Prevalence plot based on Callahan et al 2016 (McMurdie and Holmes group) https://f1000research.com/articles/5-1492/v2
 }
 \examples{
-prev0 <- prevalence_taxa( ps = PhyObject )
+# prev <- prevalence_taxa( ps = PhyObject )
 
 }
 \author{

@@ -4,7 +4,7 @@
 #' @param x value
 #'
 #' @returns tranformed value
-#'
+#' @export
 #' @author Alex Bossers \email{a.bossers@uu.nl}
 #' 
 #' @note

@@ -51,27 +51,30 @@ plot_anova_diversity2(
 \item{outfile}{Optional file name (and path) where to store the data (default "" not saved)}
 }
 \value{
-list of [\link{1}] $plot = ggplot figure, [\link{2}] $anova = pair-wise ANOVA table [\link{3}] $df = underlying data.frame (long format)
-
-Optional tabular data file on disk if \code{outfile} is given
+list of $plot = ggplot figure, $anova = pair-wise ANOVA table, $df = underlying data.frame (long format), Optional tabular data file on disk if \code{outfile} is given.
 }
 \description{
 Convenience wrapper to ggplot alpha diversity combined with pair-wise ANOVA using a (rarefied) phyloseq object as a starter. Classic or Welch ANOVA supported.
 }
+\note{
+See also MicrobiomeSeq package
+The current function is a modified and extended (drop-in replacement) version of the original \code{plot_anova_diversity} from the \code{MicrobiomeSeq} package by Alfred Ssekagiri.
+}
+\section{Updates}{
+
+\itemize{
+\item 2023-07-05 alx added x.angle to rotate x-axis legend labels
+\item 2022-10-12 alx added Welch-ANOVA options for unequal variances
+\item 2022-10-02 alx tweaked box/violin and added \code{whisker} and \code{jitter} options
+\item 2022-07-07 alx fixed sample order option to move along significance bars!
+\item 2022-07-01 Alx NOT FIXED YET! extended to include ordering of panels (methods) and samples/grouping avoiding hassling around in ggplot
+\item 2022-06-08 Alx extend invSimpson
+\item 2019-11-03 Alx Added Type can be violin or box (plot type)
+\item 2019-11-02 Alx made error bars more compact using 10\% plot in addition if 10 bars are plotted.
+\item 2019-11-01 Alx Also moved over the \code{outfile} option to save table
+}
+}
+
 \author{
 Alex Bossers \email{a.bossers@uu.nl}
-
-Additional credits go the the original function plot_anova_diversity from \href{https://github.com/umerijaz/microbiomeSeq}{MicrobiomeSeq} by Alfred Ssekagiri; I modified and extended it with some convenience options I found useful to have
-
-Updates:
-2023-07-05 alx added x.angle to rotate x-axis legend labels
-2022-10-12 alx added Welch-ANOVA options for unequal variances
-2022-10-02 alx tweaked box/violin and added \code{whisker} and \code{jitter} options
-2022-07-07 alx fixed sample order option to move along significance bars!
-2022-07-01 Alx NOT FIXED YET! extended to include ordering of panels (methods)
-and samples/grouping avoiding hassling around in ggplot
-2022-06-08 Alx extend invSimpson
-2019-11-03 Alx Added Type can be violin or box (plot type)
-2019-11-02 Alx made error bars more compact using 10\% plot in addition if 10 bars are plotted.
-2019-11-01 Alx Also moved over the \code{outfile} option to save table
 }

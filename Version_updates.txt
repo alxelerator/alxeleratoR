@@ -1,5 +1,0 @@
-Version	Date		Info
-
-0.8.1   04-App-2025 First build package and streamlining documentation.
-0.8.0	11-Jan-2025 Initial R package build from existing alxR function bundle.
-0.0.1	03-Jan-2025	Initial checkin

@@ -2,13 +2,13 @@
 #' Uses vegan::adonis2 which returns a slight different object.
 #' V2 now returns a proper data frame of tested vars and R2 and F.
 #'
-#' Function performs individual, \code{\link{adonis}}-style permanovas for every/selected elements of \code{sample_variables(physeq)}
+#' Function performs individual, adonis-style permanovas for every/selected elements of sample_variables(physeq)
 #'
-#' @param physeq phyloseq object. A distance matrix is created using \code{otu_table(physeq)}; permanovas are computed for each element of \code{sample_variables(physeq)}
-#' @param distm choice of dissimilarity index according to \code{\link{vegdist}}. Options are "manhattan", "euclidean", "canberra", "bray", "kulczynski", "jaccard",
+#' @param physeq phyloseq object. 
+#' @param distm choice of dissimilarity index according to vegan::vegdist. Options are "manhattan", "euclidean", "canberra", "bray", "kulczynski", "jaccard",
 #'              "gower", "altGower", "morisita", "horn", "mountford", "raup" , "binomial", "chao", "cao" or "mahalanobis".
 #' @param perms the number of permutations to be performed. Default is 999
-#' @param vars Empty=default tests all metadata variables (should be factor levels >=2). Otherwise give a vector c("var1","var2",...etc)
+#' @param vars Empty=default tests all metadata variables (should be factor levels >=2). Otherwise give it a vector c("var1","var2",...etc) of factor variables.
 #' @param rngseed set.seed number to use for reproducible permutations. Default rngseed=2202
 #' @param verbose boolean. Default is TRUE and prints progress.
 #' @param hellinger boolean. Default TRUE to Hellinger transform the "distance" matrix
@@ -18,14 +18,13 @@
 #' @export
 #' @import vegan
 #' @import phyloseq
-#' @note if \code{sample_data(physeq)} contains NAs, the function will convert these to an additional level "none"
+#' @note if sample_data(physeq) contains NAs, the function will convert these to an additional level "none"
 #' @note Added the complete adonis output in verbose mode (alex 20200515)
 #' @note V2 Moved to adonis2 since adonis will be deprecated soon (20220610)
 #'
 #' @author Alex Bossers \email{a.bossers@uu.nl} based on initial idea by Stephanie Jurburg.
 #' @examples
-#'
-#' per <- permanovas(ps, "bray")
+#' # per <- permanovas2(ps, distm="bray")
 #'
 permanovas2 <- function(physeq, distm="bray", perms=999, vars="", hellinger=TRUE, rngseed=2202, verbose=TRUE ) {
 

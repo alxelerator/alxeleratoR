@@ -12,7 +12,7 @@
 #' @export
 #'
 #' @author Original author unknown. You? Contact me for credits.
-#' @author Alex Bossers UU /email{a.bossers@uu.nl}
+#' @author Alex Bossers \email{a.bossers@uu.nl}
 
 phylodiv <- function(physeq, theta = 0) {
     require(phyloseq)

@@ -34,9 +34,9 @@ ps_co_occurrence(
 
 \item{p.filt}{filter adjusted p value. default 0.01. if raw p use adjust method "none"}
 
-\item{verbose}{default TRUE}
+\item{filt_zero}{default TRUE. If abundance of taxon in both datasets is zero, that taxon is filtered out and given rho=0}
 
-\item{filt_zeo}{default TRUE}
+\item{verbose}{default TRUE}
 }
 \value{
 Co-correlation data frame of all taxa (including self-self)

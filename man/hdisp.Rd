@@ -7,28 +7,30 @@
 hdisp(physeq, distm = "bray", vars = NULL, hellinger = TRUE)
 }
 \arguments{
-\item{physeq}{a \link{phyloseq} object}
+\item{physeq}{a phyloseq object}
 
-\item{distm}{choice of dissimilarity index according to \link{vegdist}. Options are "manhattan", "euclidean", "canberra", "bray", "kulczynski", "jaccard", "gower", "altGower", "morisita", "horn", "mountford", "raup" , "binomial", "chao", "cao" or "mahalanobis".}
+\item{distm}{choice of dissimilarity index according to vegan::vegdist(). Options are "manhattan", "euclidean", "canberra", "bray", "kulczynski", "jaccard", "gower", "altGower", "morisita", "horn", "mountford", "raup" , "binomial", "chao", "cao" or "mahalanobis".}
 
 \item{vars}{selected variables from the ps object (should be type factor and 2 or more levels). Default uses all.}
 
 \item{hellinger}{default=TRUE. Performs Hellinger transformation on the otu table.}
 }
 \value{
-function prints a list of p-values and returns a list of \code{betadisper}
+function prints a list of dataframes for p-values and betadisper output
 }
 \description{
-Function performs individual, \code{\link{betadisper}}-type tests for homogeneity of dispersions for every element of \code{sample_variables(physeq)}. Community matrix is Hellinger-transformed prior to the calculation of distances using specified matrix.
+Function performs individual, betadisper-type tests for homogeneity of dispersions for every element of sample_variables. Community matrix is Hellinger-transformed prior to the calculation of distances using specified matrix.
+}
+\note{
+Alx: added return list incl p-values
 }
 \examples{
-q <- hdisp(physeq, distm="bray", vars=c("Type","Date","Health"))
+library(phyloseq)
+data(GlobalPatterns)
+q <- hdisp(GlobalPatterns, distm="bray", vars=c("SampleType"))
 plot(q[[1]])
-# outputs which can be examined with 
 
 }
 \author{
 Alex Bossers \email{a.bossers@uu.nl}
-
-Alx: added return list incl p-values
 }

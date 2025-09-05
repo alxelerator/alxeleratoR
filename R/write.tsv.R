@@ -6,9 +6,11 @@
 #' @param quote Boolean default FLASE. Quote fields using ""
 #' @param row.names Boolean, Add row names. Default TRUE
 #' @export
+#' @import utils
 #' @author Alex Bossers \email{a.bossers@uu.nl}
 write.tsv <- function( dataToWrite, filename, sep = "\t", quote = FALSE, row.names=TRUE )
 {
+    require(utils)
 	write.table( dataToWrite, filename, sep=sep, quote=quote, row.names=row.names )
 }
 

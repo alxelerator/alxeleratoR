@@ -2,7 +2,7 @@
 #'
 #' Figures look great when using cowplot theme as default.
 #'
-#' @param filename the filename base to save the figures
+#' @param filename_base the filename base to save the figures
 #' @param plotobj ggplot image object
 #' @param scale default 1.5
 #' @param width default 25
@@ -26,7 +26,7 @@
 #'          2020-01-01 Alx initial checkin
 #' 
 # Alex Saves ggplot plots with reasonable defaults in png and svg using cowplot
-SaveVariousPlots <- function(filename_base, plotobj, scale = 1.5, width = 40, height = 20, units = "cm" , bg_png="white", filetype="")
+SaveVariousPlots <- function(filename_base="", plotobj, scale = 1.5, width = 40, height = 20, units = "cm" , bg_png="white", filetype="")
     {
     	require(ggplot2)
     	if( filetype > "" ) {

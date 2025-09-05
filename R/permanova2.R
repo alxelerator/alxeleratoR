@@ -1,13 +1,13 @@
 #' Single (multivariable) PERMANOVA v2 Uses vegan::adonis2. This function is just a convenience wrapper for vegan::adonis2.
 #'
-#' Function performs individual, \code{\link{adonis2}} permanova for given variable or (multivariable) formula
+#' Function performs individual, adonis2 permanova for given variable or (multivariable) formula
 #'
-#' @param physeq phyloseq object. A distance matrix is created using \code{otu_table(physeq)}; permanovas are computed for each element of \code{sample_variables(physeq)}
+#' @param physeq phyloseq object. atrix is created using otu_table(physeq); permanovas are computed for each element of sample_variables(physeq)
 #' @param formula Defaults to distnmatrix ~ var
 #' @param var ONE variable. Required if no formula is specified! (should be factor levels >=2).
-#' @param distm choice of dissimilarity index according to \code{\link{vegdist}}. Options are "manhattan", "euclidean", "canberra", "bray", "kulczynski", "jaccard", "gower", "altGower", "morisita", "horn", "mountford", "raup" , "binomial", "chao", "cao" or "mahalanobis".
-#' @param perms the number of permutations to be performed. Default is 999
-#' @param hellinger TRUE/FALSE. By default performs a Hellinger transformation of the OTU table. Here you can turn it off.
+#' @param permutations default 999. Number of permutations to use.
+#' @param distm choice of dissimilarity index according to vegan::vegdist. Options are "manhattan", "euclidean", "canberra", "bray", "kulczynski", "jaccard", "gower", "altGower", "morisita", "horn", "mountford", "raup" , "binomial", "chao", "cao" or "mahalanobis".
+#' @param hellinger TRUE. By default performs a Hellinger transformation of the OTU table. Here you can turn it off.
 #' @param rngseed set.seed number to use for reproducible permutations. Default rngseed=2202.
 #' @param ... Allows additional arguments to the adonis2 function to be taken along. For instance parallel = parallel::detectCores() - 1
 #'
@@ -19,13 +19,16 @@
 #' @import stringr
 #' @import dplyr
 #'
-#' @note if \code{sample_data(physeq)} contains NAs, the function will convert these to an additional level "none"
+#' @note if sample_data(physeq) contains NAs, the function will convert these to an additional level "none"
 #'
 #' @author Convenience wrapper: Alex Bossers \email{a.bossers@uu.nl}
 #' 
 #' @examples
-#'   per <- permanova2( physeq, distm="bray", formula="~ Treatment + AnimalNumber", var="", rngseed="2202", parallel=(parallel::detectCores() - 1) )
-#'   per <- permanova2( physeq, distm="bray", formula="", var="Treatment", rngseed="2202")
+#' # data(GlobalPatterns)
+#' # physeq <- GlobalPatterns
+#' # per <- permanova2( physeq, distm="bray", formula="~ Treatment + AnimalNumber", var="",
+#' #                    rngseed="2202", parallel=(parallel::detectCores() - 1) )
+#' # per <- permanova2( physeq, distm="bray", formula="", var="Treatment", rngseed="2202")
 #'
 permanova2 <- function(physeq="", distm="bray", formula="", var="", permutations=999, hellinger=TRUE, rngseed=2202, ...) {
 

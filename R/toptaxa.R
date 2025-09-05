@@ -4,6 +4,7 @@
 #' @param rank optinal taxonomic rank (default="Phylum").
 #' @param top optional top number of taxa to return (default 10)
 #' @param samples optional name of sample or set of sample names to restrict to (default NA, all samples)
+#' @param NArm default FALSE. Remove NA values if TRUE
 #' @return toplist taxa
 #' @import phyloseq
 #'

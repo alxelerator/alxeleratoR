@@ -14,6 +14,7 @@
 #' @param facet_grid we want to facet the stacked bars (default facet_grid=NULL, example facet_grid="Kingdom")
 #' @param NArm whether or not to remove NAs in the data while agglomerating at given taxonomic rank (default NArm=FALSE)
 #' @param xlab.rel Tweaked size of x-axis labels since readability depends on N samples (default xlab.rel=0.5)
+#' @param legend default TRUE. Turn off the legend if set to FALSE
 #' @param legend.col How many columns the legend may contain (default legend.col=1)
 #' @param legend.size FOnt size to use in legend. Default 8 pnt.
 #' @param title Any custom to plot on the figure (default generates "Barplot <taxrank> - top<x> taxa")

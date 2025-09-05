@@ -21,8 +21,8 @@
 #' @export
 #'
 #' @examples
-#' prevplot0 <- prevalence_plot( ps = PhyObject, rank = "Family", xlog = TRUE, ylog = FALSE,
-#' yrelative = FALSE, title = "OTU prev over all samples" )
+#' # prevplot <- prevalence_plot( ps = PhyObject, rank = "Family", xlog = TRUE, ylog = FALSE,
+#' #                              yrelative = FALSE, title = "OTU prev over all samples" )
 #'
 #' @import ggplot2
 #' @import phyloseq
@@ -34,7 +34,7 @@ prevalence_plot <- function( ps, rank = "Phylum",
                              title = paste0( "Taxa (",rank,") prevalence over all samples (Nsamples=",nsamples(ps),")" ) 
                             )
 {
-    require(pyloseq)
+    require(phyloseq)
     require(ggplot2)
     prevdf <- prevalence_taxa( ps, prev_relative = yrelative )  #rank variable deprecated in this function
     plotobj <- ggplot(prevdf, aes(TotalAbundance,

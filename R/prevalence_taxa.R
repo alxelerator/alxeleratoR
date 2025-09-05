@@ -16,7 +16,7 @@
 #' @export
 #'
 #' @examples
-#' prev0 <- prevalence_taxa( ps = PhyObject )
+#' # prev <- prevalence_taxa( ps = PhyObject )
 #'
 #' @import phyloseq
 

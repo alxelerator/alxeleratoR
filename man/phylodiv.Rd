@@ -24,5 +24,5 @@ Requires a phylogenetic tree in your phyloseq object!
 \author{
 Original author unknown. You? Contact me for credits.
 
-Alex Bossers UU /email{a.bossers@uu.nl}
+Alex Bossers \email{a.bossers@uu.nl}
 }

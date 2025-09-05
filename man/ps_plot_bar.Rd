@@ -60,6 +60,8 @@ ps_plot_bar(
 
 \item{xlab.rel}{Tweaked size of x-axis labels since readability depends on N samples (default xlab.rel=0.5)}
 
+\item{legend}{default TRUE. Turn off the legend if set to FALSE}
+
 \item{legend.col}{How many columns the legend may contain (default legend.col=1)}
 
 \item{legend.size}{FOnt size to use in legend. Default 8 pnt.}

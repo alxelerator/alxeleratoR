@@ -2,7 +2,7 @@
 #'
 #' @param ps phyloseqobject
 #' @param verbose Default TRUE. Shows diff first 10 taxa before and after
-#' @param genusspecies Default TRUE. Adds taxonomy column GenusSpecies (Genus+Species) with proper formatting (no prefix, or [Genus] etc on different levels avail only)
+#' @param genusspecies Default TRUE. Adds taxonomy column GenusSpecies (Genus+Species) with proper formatting (no prefix, or \[Genus\] etc on different levels avail only)
 #' @return NA replaced phyloseq object
 #'
 #' @author a.bossers@uu.nl
@@ -11,7 +11,7 @@
 #' Version log:
 #'   version 1: 20200728
 #'   version 2: 20211210 added support species and checks for presence of tax prefix and fixed non-NA issues.
-#'   version 3: 20240206 added convenienc taxonomic column GenusSpecies. Fill with Genus+species is species avail (without g__ s__) or with "Genus [genus] etc all levels"
+#'   version 3: 20240206 added convenienc taxonomic column GenusSpecies. Fill with Genus+species if species annotation available (without g__ s__) or with "Genus \[genus\] etc all levels"
 #' 
 #' @import phyloseq
 #' @import vegan

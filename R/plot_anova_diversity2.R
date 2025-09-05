@@ -15,27 +15,29 @@
 #' @param title any title. Default empty.
 #' @param outfile Optional file name (and path) where to store the data (default "" not saved)
 #'
-#' @returns list of [[1]] $plot = ggplot figure, [[2]] $anova = pair-wise ANOVA table [[3]] $df = underlying data.frame (long format)
-#' @returns Optional tabular data file on disk if `outfile` is given
+#' @returns list of $plot = ggplot figure, $anova = pair-wise ANOVA table, $df = underlying data.frame (long format), Optional tabular data file on disk if `outfile` is given.
 #'
 #' @import phyloseq
 #' @import dplyr
 #' @import rstatix
+#' @export
 #'
 #' @author Alex Bossers \email{a.bossers@uu.nl}
-#' @author Additional credits go the the original function plot_anova_diversity from [MicrobiomeSeq](https://github.com/umerijaz/microbiomeSeq) by Alfred Ssekagiri; I modified and extended it with some convenience options I found useful to have
+#' @note
+#'  See also MicrobiomeSeq package
+#'  The current function is a modified and extended (drop-in replacement) version of the original `plot_anova_diversity` from the `MicrobiomeSeq` package by Alfred Ssekagiri.
 #' 
+#' @section
 #' Updates:
-#'          2023-07-05 alx added x.angle to rotate x-axis legend labels
-#'          2022-10-12 alx added Welch-ANOVA options for unequal variances
-#'          2022-10-02 alx tweaked box/violin and added `whisker` and `jitter` options
-#'          2022-07-07 alx fixed sample order option to move along significance bars!
-#'          2022-07-01 Alx NOT FIXED YET! extended to include ordering of panels (methods) 
-#'                         and samples/grouping avoiding hassling around in ggplot
-#'          2022-06-08 Alx extend invSimpson
-#'          2019-11-03 Alx Added Type can be violin or box (plot type)
-#'          2019-11-02 Alx made error bars more compact using 10% plot in addition if 10 bars are plotted.
-#'          2019-11-01 Alx Also moved over the `outfile` option to save table
+#' * 2023-07-05 alx added x.angle to rotate x-axis legend labels
+#' * 2022-10-12 alx added Welch-ANOVA options for unequal variances
+#' * 2022-10-02 alx tweaked box/violin and added `whisker` and `jitter` options
+#' * 2022-07-07 alx fixed sample order option to move along significance bars!
+#' * 2022-07-01 Alx NOT FIXED YET! extended to include ordering of panels (methods) and samples/grouping avoiding hassling around in ggplot
+#' * 2022-06-08 Alx extend invSimpson
+#' * 2019-11-03 Alx Added Type can be violin or box (plot type)
+#' * 2019-11-02 Alx made error bars more compact using 10% plot in addition if 10 bars are plotted.
+#' * 2019-11-01 Alx Also moved over the `outfile` option to save table
 #' 
 
 plot_anova_diversity2 <- function( physeq, method, rarefy.override=0, 
@@ -44,24 +46,6 @@ plot_anova_diversity2 <- function( physeq, method, rarefy.override=0,
                                    type="violin", whisker=FALSE, jitter=TRUE, alpha=0.3, x.angle=0, 
                                    title="", outfile="")
 {
- 
-  #testing
-  # physeq=m2.asv.hot.4b2r
-  # method=c("richness","evenness")
-  # grouping_column="Sample_cat"
-  # rarefy.override=10000
-  # anova.type="anova"
-  # sample_order=""
-  # pValueCutoff = 0.05
-  # type="violin"
-  # whisker=FALSE
-  # jitter=TRUE
-  # alpha=0.3
-  # x.angle=0
-  # title=""
-  # outfile=""
-
-   
   require(phyloseq)
   require(dplyr)
   require(rstatix) #function for Welch ANOVA
@@ -189,4 +173,3 @@ plot_anova_diversity2 <- function( physeq, method, rarefy.override=0,
 
   return( list( plot=p, anova=anova_res$df_pw, df=df ) )
 }
-

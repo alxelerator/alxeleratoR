@@ -7,11 +7,7 @@
 #' @returns tranformed value
 #'
 #' @author Alex Bossers \email{a.bossers@uu.nl}
-#' 
-#' @note
-#'   Updates:
-#'          2020-03-02 Alx split bucket into functions
-#'          2020-01-01 Alx initial checkin
+#' @export
 #' 
 cal_z_score <- function(x){
   (x - mean(x)) / sd(x)

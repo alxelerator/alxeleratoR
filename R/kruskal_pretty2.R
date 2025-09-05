@@ -38,12 +38,6 @@
 #'     You should have received a copy of the GNU General Public License
 #'     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #' 
-#' Changelog
-#' 
-#' 
-#' ###########################################################################################
-#' Example of use
-#' kruskal.pretty(bacteria, metrics, csv, c('sloth_sp','type','sp.type'), 'sloth', taxonomy)
 
 kruskal.pretty2 = function( ps, csv, interesting, output_name, taxrank='' ){
   library(vegan)
@@ -201,7 +195,7 @@ kruskal.pretty2 = function( ps, csv, interesting, output_name, taxrank='' ){
   colnames(o_csv)[which(names(o_csv) == "V10")] <- "Right mean abund"
   colnames(o_csv)[which(names(o_csv) == "V11")] <- "Right stdev"
   #o_csv[,1]=NULL
-  write.tsv(o_csv, file=output_name)
+  write.tsv(o_csv, filename=output_name)
   return( o_csv )
 }
 

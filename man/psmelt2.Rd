@@ -2,60 +2,63 @@
 % Please edit documentation in R/psmelt2.R
 \name{psmelt2}
 \alias{psmelt2}
-\title{Phyloseq psmelt() dplyr optimised for large datasets}
+\title{Phyloseq psmelt function optimised for large datasets using dplyr}
 \usage{
-psmelt(physeq)
+psmelt2(physeq)
 }
 \arguments{
-\item{physeq}{(Required). An \code{\link{otu_table-class}} or
-\code{\link{phyloseq-class}}. Function most useful for phyloseq-class.}
+\item{physeq}{(Required)}
 }
 \value{
-A \code{\link{data.frame}}-class table.
+A data.frame-class table.
 }
 \description{
 psmelt2
 tidyr speedy implementation of psmelt from phyloseq itself
 }
+\note{
+TODO: test behavior vs. original phyloseq function psmelt
+}
 \examples{
-data("GlobalPatterns")
-gp.ch = subset_taxa(GlobalPatterns, Phylum == "Chlamydiae")
-mdf = psmelt(gp.ch)
-nrow(mdf)
-ncol(mdf)
-colnames(mdf)
-head(rownames(mdf))
-# Create a ggplot similar to
-library("ggplot2")
-p = ggplot(mdf, aes(x=SampleType, y=Abundance, fill=Genus))
-p = p + geom_bar(color="black", stat="identity", position="stack")
-print(p)
+# data("GlobalPatterns")
+# dgp.ch = subset_taxa(GlobalPatterns, Phylum == "Chlamydiae")
+# dmdf = psmelt2(gp.ch)
+# dnrow(mdf)
+# dncol(mdf)
+# dcolnames(mdf)
+# dhead(rownames(mdf))
+# d# Create a ggplot
+# dlibrary("ggplot2")
+# dp = ggplot(mdf, aes(x=SampleType, y=Abundance, fill=Genus))
+# dp = p + geom_bar(color="black", stat="identity", position="stack")
+# dprint(p)
+
 }
 \author{
 scavenged 4 May 2019 from: https://github.com/mikemc/speedyseq/tree/master/R
 
 The psmelt function is a specialized melt function for melting phyloseq objects
 (instances of the phyloseq class), usually for producing graphics
-with \code{\link[ggplot2]{ggplot}2}.
+with ggplot2.
 The naming conventions used in downstream phyloseq graphics functions
 have reserved the following variable names that should not be used
-as the names of \code{\link{sample_variables}}
-or taxonomic \code{\link{rank_names}}.
-These reserved names are \code{c("Sample", "Abundance", "OTU")}.
+as the names of sample_variables
+or taxonomic rank_names.
+These reserved names are c("Sample", "Abundance", "OTU").
 Also, you should not have identical names for
 sample variables and taxonomic ranks.
 That is, the intersection of the output of the following two functions
-\code{\link{sample_variables}}, \code{\link{rank_names}}
+sample_variables, rank_names
 should be an empty vector
-(e.g. \code{intersect(sample_variables(physeq), rank_names(physeq))}).
+e.g. intersect(sample_variables(physeq), rank_names(physeq)).
 All of these potential name collisions are checked-for
 and renamed automtically with a warning.
 However, if you (re)name your variables accordingly ahead of time,
 it will reduce confusion and eliminate the warnings.
 
 NOTE: This is the speedyseq reimplementation of phyloseq's psmelt function.
-Speedyseq reimplements \code{psmelt} to use functions from the \code{tidyr}
-and \code{dplyr} packages.
+Speedyseq reimplements psmelt to use functions from the tidyr
+and dplyr packages.
 
 Note that ``melted'' phyloseq data is stored much less efficiently, and so
 RAM storage issues could arise with a smaller dataset (smaller number of
@@ -64,7 +67,7 @@ of graphics-ready datasets, however, this should not be a problem.  Because
 the number of OTU entries has a large effect on the RAM requirement, methods
 to reduce the number of separate OTU entries -- for instance by
 agglomerating OTUs based on phylogenetic distance using
-\code{\link{tip_glom}} -- can help alleviate RAM usage problems.  This
+tip_glom -- can help alleviate RAM usage problems.  This
 function is made user-accessible for flexibility, but is also used
 extensively by plot functions in phyloseq.
 }

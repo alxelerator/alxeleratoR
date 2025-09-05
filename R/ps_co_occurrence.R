@@ -25,7 +25,7 @@
 #' @param adjust default Bejamini-Hochberg (BH). Any method from p.adjust function should work. Provide "none" for raw.
 #' @param rho.filt default 0.6
 #' @param p.filt filter adjusted p value. default 0.01. if raw p use adjust method "none"
-#' @param filt_zeo default TRUE 
+#' @param filt_zero default TRUE. If abundance of taxon in both datasets is zero, that taxon is filtered out and given rho=0 
 #' @param verbose default TRUE
 #'
 #' @returns Co-correlation data frame of all taxa (including self-self)
@@ -36,7 +36,6 @@
 #' @author Alex Bossers \email{a.bossers@uu.nl} 
 #' @author Inspired on Jin Choi's within set algorithm plain R for one set
 #' @author Inspired by phylosmith package doing co-occurrence on ps objects but within one object
-
 #' 
 ps_co_occurrence <- function( ps_x='', ps_y='', 
                               method="spearman", alternative='two.sided', exact=FALSE, adjust="BH",

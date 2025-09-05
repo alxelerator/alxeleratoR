@@ -44,8 +44,8 @@ Use the cowplot theme for great results
 Prevalence plot based on Callahan et al 2016 (McMurdie and Holmes group); https://f1000research.com/articles/5-1492/v2
 }
 \examples{
-prevplot0 <- prevalence_plot( ps = PhyObject, rank = "Family", xlog = TRUE, ylog = FALSE,
-yrelative = FALSE, title = "OTU prev over all samples" )
+# prevplot <- prevalence_plot( ps = PhyObject, rank = "Family", xlog = TRUE, ylog = FALSE,
+#                              yrelative = FALSE, title = "OTU prev over all samples" )
 
 }
 \author{

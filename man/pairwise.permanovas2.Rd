@@ -19,6 +19,8 @@ pairwise.permanovas2(
 \arguments{
 \item{ps}{phyloseqobject}
 
+\item{variable}{all factors to be tested pairwise "single" or multiple c("A","B")}
+
 \item{sim.function}{function to calculate the similarity matrix (vegdist or daisy). Default is 'vegdist'}
 
 \item{sim.method}{similarity method from daisy or vegdist: default is 'bray'}
@@ -31,7 +33,7 @@ pairwise.permanovas2(
 
 \item{num.cores}{Limit the number of cores to be used. Default = available cores - 1}
 
-\item{metadata}{variable (factor) all factors to be tested pairwise}
+\item{...}{Transfer any other common variables to the adonis2 function}
 }
 \value{
 a table with the pairwise factors, F-values, R^2, p.value and adjusted p.values
@@ -42,21 +44,28 @@ Pairwise PERMANOVAs (adonis2) on phyloseq to find which pairs of a more complete
 \note{
 Based initially on a function by Pedro Martinez Arbizu
 
-Scavenged from https://www.researchgate.net/post/How_can_I_do_PerMANOVA_pairwise_contrasts_in_R
+Initially scavenged from https://www.researchgate.net/post/How_can_I_do_PerMANOVA_pairwise_contrasts_in_R
 }
 \examples{
-data(iris)
-pairwise.adonis(iris[,1:4],iris$Species)
-
-[1] Signif. codes:  Signif. codes:  0 = ***, 0.001 = **, 0.01 = *, 0.05 = .
-                    pairs    F.Model        R2 p.value p.adjusted sig
-1    setosa vs versicolor  552.51266 0.8493496   0.001      0.003   *
-2     setosa vs virginica 1001.54509 0.9108722   0.001      0.003   *
-3 versicolor vs virginica   91.82959 0.4837475   0.001      0.003   *
-
-#similarity euclidean from vegdist and holm correction
-#pairwise.adonis(x=iris[,1:4],factors=iris$Species,sim.function='vegdist',sim.method='euclidian',p.adjust.m='holm')
-adon=pairwise.adonis2( otu_table(physeq), sample_data(physeq)$Sample_type )
+#library(phyloseq)
+#data(GlobalPatterns)
+#pairwise.permanovas2( GlobalPatterns, variable=c("SampleType"), 
+#                      sim.method = "bray", hellinger = TRUE, p.adjust.m = "BH")
+#
+## No significant comparisons in this dataset.
+#
+#> Signif. codes: 0 = ***, 0.001 = **, 0.01 = *, 0.05 = .
+#>                                       Pairs   F.Model        R2     Pr(>F)     p.adj sig
+#> 1                             Soil vs Feces  7.937235 0.6135186 0.04400000 0.1028571    
+#> 2                              Soil vs Skin  5.420047 0.5753737 0.10000000 0.1028571    
+#> 3                            Soil vs Tongue  5.832750 0.6603549 0.10000000 0.1028571    
+#> 4                        Soil vs Freshwater  4.832812 0.6169958 0.10000000 0.1028571    
+#> 5                Soil vs Freshwater (creek)  8.934814 0.6907571 0.10000000 0.1028571    
+#> 6                             Soil vs Ocean  8.016178 0.6671155 0.10000000 0.1028571    
+#> 7                Soil vs Sediment (estuary)  8.045936 0.6679378 0.10000000 0.1028571    
+#> 8                              Soil vs Mock 13.453708 0.7708223 0.10000000 0.1028571    
+#> 9                             Feces vs Skin  7.440478 0.5980862 0.02800000 0.1028571    
+#>...
 
 }
 \author{

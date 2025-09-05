@@ -17,14 +17,14 @@ permanovas2(
 )
 }
 \arguments{
-\item{physeq}{phyloseq object. A distance matrix is created using \code{otu_table(physeq)}; permanovas are computed for each element of \code{sample_variables(physeq)}}
+\item{physeq}{phyloseq object.}
 
-\item{distm}{choice of dissimilarity index according to \code{\link{vegdist}}. Options are "manhattan", "euclidean", "canberra", "bray", "kulczynski", "jaccard",
+\item{distm}{choice of dissimilarity index according to vegan::vegdist. Options are "manhattan", "euclidean", "canberra", "bray", "kulczynski", "jaccard",
 "gower", "altGower", "morisita", "horn", "mountford", "raup" , "binomial", "chao", "cao" or "mahalanobis".}
 
 \item{perms}{the number of permutations to be performed. Default is 999}
 
-\item{vars}{Empty=default tests all metadata variables (should be factor levels >=2). Otherwise give a vector c("var1","var2",...etc)}
+\item{vars}{Empty=default tests all metadata variables (should be factor levels >=2). Otherwise give it a vector c("var1","var2",...etc) of factor variables.}
 
 \item{hellinger}{boolean. Default TRUE to Hellinger transform the "distance" matrix}
 
@@ -36,18 +36,17 @@ permanovas2(
 a dataframe containing p-values of each comparison in the first column, and the number of levels for that variable in the second.
 }
 \description{
-Function performs individual, \code{\link{adonis}}-style permanovas for every/selected elements of \code{sample_variables(physeq)}
+Function performs individual, adonis-style permanovas for every/selected elements of sample_variables(physeq)
 }
 \note{
-if \code{sample_data(physeq)} contains NAs, the function will convert these to an additional level "none"
+if sample_data(physeq) contains NAs, the function will convert these to an additional level "none"
 
 Added the complete adonis output in verbose mode (alex 20200515)
 
 V2 Moved to adonis2 since adonis will be deprecated soon (20220610)
 }
 \examples{
-
-per <- permanovas(ps, "bray")
+# per <- permanovas2(ps, distm="bray")
 
 }
 \author{

@@ -1,7 +1,7 @@
 #' Move ASV sequence as sequence_name into the phyloseq refseq slot. Also shorten the taxa names to Hashed-sequences or ASV0001 etc
 #'
 #' Hash method for shortning ASVs is preferred since it would allow still to merge different PS objects since hash 1:1 seq.
-#'       By default hash md5 is used. Alternative just a number.
+#'       By default hash md5 is used from openssl package. Alternative... just a number.
 #'
 #' @param ps phyloseq object (without refseq object and sequences as taxonomy names)
 #' @param in.taxonomy default TRUE. Adds the actual ASV sequence as lowest level in taxonomy table

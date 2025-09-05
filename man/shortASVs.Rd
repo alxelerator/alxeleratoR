@@ -18,7 +18,7 @@ phyloseq object with ASVs in refseq slot and shortened ASV taxonomy names
 }
 \description{
 Hash method for shortning ASVs is preferred since it would allow still to merge different PS objects since hash 1:1 seq.
-By default hash md5 is used. Alternative just a number.
+By default hash md5 is used from openssl package. Alternative... just a number.
 }
 \author{
 a.bossers@uu.nl

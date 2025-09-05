@@ -1,16 +1,18 @@
 Package: alxeleratoR
-Title: R package to assist data analysis mostly focused toward phyloseq objects
-Version: 0.8.1.000
-Authors@R: 
-    person("Alex", "Bossers", , "a.bossers@uu.nl", role = c("aut", "cre"))
-Description: 
-    R package to accelerate data analysis, so you can focus on interpretation during data exploration instead of finding out how to code your question.
-    This "package"/bundle evolved from my need to automate and share common analyses and visualizations. Most functions focus on using phyloseq or similar objects, and mostl are wrappers around, or drop-in replacements of, existing functions or packages, some are original creations, and others are "borrowed" and adapted to my needs (with credit given as accurately as possible. If you think I’ve forgotten to credit you, please drop me a message).
-    The primary context is microbiome, resistome, metagenomics, and eDNA research. But feel free to use them in different contexts.
-License: GPL (>= 3)
+Title: Accelerated phyloseq Data Analysis
+Version: 0.8.2.000
+Authors@R: c( person("Alex", "Bossers", role = c("aut", "cre"), email = "a.bossers@uu.nl", comment = c(ORCID = "0000-0002-6586-717X", affiliation = "IRAS - Utrecht University, NL")),
+              person("Peter", "Scherpenisse", role = "ctb", email = "p.scherpenisse@uu.nl", comment = c(affiliation = "IRAS - Utrecht University, NL")),
+              person("Tirza", "de Jager", role = "ctb", email = "t.l.d.dejager@uu.nl", comment = c(affiliation = "IRAS - Utrecht University, NL", role_note = "MSc epidemiology student")))
+URL: https://github.com/alxelerator/alxeleratoR
+BugReports: https://github.com/alxelerator/alxeleratoR/issues
+Description: R package to accelerate data analysis, so you can focus on interpretation during data exploration instead of finding out how to code the answers to your questions. This "package"/bundle evolved from my own need to automate and share common analyses and visualizations. Most functions require phyloseq or similar data structures.
+    Many functions are wrappers around, or drop-in replacements of, existing functions or packages. Some functions are original creations while others are "borrowed" and adapted to my personal needs (I tried giving credits as appropriate as possible. If you think I’ve forgotten to credit you, please drop me a message).
+    The primary context of my work is microbiome, resistome, metagenomics, and eDNA research. But feel free to use them in different contexts. Make sure to read the disclaimer and double check functions are fit for its purpose. Outcomes could be erroneous!
+License: GPL (>= 3) + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.3.2
+RoxygenNote: 7.3.3
 Imports:
     Biostrings, RColorBrewer, dplyr, foreach, ggplot2,
     openssl, pals, phyloseq, reshape2, rstatix, scales,

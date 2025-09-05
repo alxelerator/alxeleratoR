@@ -23,7 +23,7 @@
 #'
 #' @export
 
-sample_sum_plot <- function( ps=merged, percentKeep = 90, cutoff = FALSE, numberKeep = FALSE, 
+sample_sum_plot <- function( ps, percentKeep = 90, cutoff = FALSE, numberKeep = FALSE, 
                              logy=TRUE, color="", size.points=3,
                              stats=TRUE, subtitle="", crosshair=TRUE, xlab.rel = 0.8, namesColumn="" )
 {
@@ -109,9 +109,9 @@ sample_sum_plot <- function( ps=merged, percentKeep = 90, cutoff = FALSE, number
   if(logy) {
     samsum.plot <- samsum.plot +
                       ylab("SampleSum") +
-                      scale_y_log10(label=comma) #scale_y_continuous(trans ="log1p") #no 0 problem but less weel formed y axis
+                      scale_y_log10(labels=scales::comma) #scale_y_continuous(trans ="log1p") #no 0 problem but less weel formed y axis
   } else { 
-    samsum.plot <- samsum.plot + scale_y_continuous(label=comma) 
+    samsum.plot <- samsum.plot + scale_y_continuous(labels=scales::comma) 
   }
 
   if(stats==TRUE) {

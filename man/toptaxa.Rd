@@ -14,6 +14,8 @@ toptaxa(ps, rank = "Phylum", top = 10, samples = NA, NArm = FALSE)
 \item{top}{optional top number of taxa to return (default 10)}
 
 \item{samples}{optional name of sample or set of sample names to restrict to (default NA, all samples)}
+
+\item{NArm}{default FALSE. Remove NA values if TRUE}
 }
 \value{
 toplist taxa

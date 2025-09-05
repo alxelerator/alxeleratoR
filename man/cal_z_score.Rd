@@ -19,11 +19,6 @@ Calculate recalibration matrix for heatmaps
 Apply transformation function
 Z score is difference to mean divided by sd
 }
-\note{
-Updates:
-2020-03-02 Alx split bucket into functions
-2020-01-01 Alx initial checkin
-}
 \author{
 Alex Bossers \email{a.bossers@uu.nl}
 }

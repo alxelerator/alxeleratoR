@@ -1,13 +1,13 @@
 #' Multiple tests for homogeneity of dispersions (vegan::betadisper)
 #'
-#' Function performs individual, \code{\link{betadisper}}-type tests for homogeneity of dispersions for every element of \code{sample_variables(physeq)}. Community matrix is Hellinger-transformed prior to the calculation of distances using specified matrix.
+#' Function performs individual, betadisper-type tests for homogeneity of dispersions for every element of sample_variables. Community matrix is Hellinger-transformed prior to the calculation of distances using specified matrix.
 #'
-#' @param physeq a \link{phyloseq} object
-#' @param distm choice of dissimilarity index according to \link{vegdist}. Options are "manhattan", "euclidean", "canberra", "bray", "kulczynski", "jaccard", "gower", "altGower", "morisita", "horn", "mountford", "raup" , "binomial", "chao", "cao" or "mahalanobis".
+#' @param physeq a phyloseq object
+#' @param distm choice of dissimilarity index according to vegan::vegdist(). Options are "manhattan", "euclidean", "canberra", "bray", "kulczynski", "jaccard", "gower", "altGower", "morisita", "horn", "mountford", "raup" , "binomial", "chao", "cao" or "mahalanobis".
 #' @param vars selected variables from the ps object (should be type factor and 2 or more levels). Default uses all.
 #' @param hellinger default=TRUE. Performs Hellinger transformation on the otu table.
 #' 
-#' @return function prints a list of p-values and returns a list of \code{betadisper} 
+#' @return function prints a list of dataframes for p-values and betadisper output 
 #'
 #' @import phyloseq
 #' @import vegan
@@ -16,13 +16,14 @@
 #' @export
 #'
 #' @examples
-#' q <- hdisp(physeq, distm="bray", vars=c("Type","Date","Health"))
+#' library(phyloseq)
+#' data(GlobalPatterns)
+#' q <- hdisp(GlobalPatterns, distm="bray", vars=c("SampleType"))
 #' plot(q[[1]])
-#' # outputs which can be examined with 
 #'
 #' @author Alex Bossers \email{a.bossers@uu.nl}
 #'
-#' Alx: added return list incl p-values
+#' @note Alx: added return list incl p-values
 #'
 hdisp <- function(physeq, distm="bray", vars=NULL, hellinger=TRUE) {
   require(foreach)

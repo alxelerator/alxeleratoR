@@ -11,7 +11,7 @@ taxa_resolve_NAs(ps, verbose = TRUE, genusspecies = TRUE)
 
 \item{verbose}{Default TRUE. Shows diff first 10 taxa before and after}
 
-\item{genusspecies}{Default TRUE. Adds taxonomy column GenusSpecies (Genus+Species) with proper formatting (no prefix, or \link{Genus} etc on different levels avail only)}
+\item{genusspecies}{Default TRUE. Adds taxonomy column GenusSpecies (Genus+Species) with proper formatting (no prefix, or [Genus] etc on different levels avail only)}
 }
 \value{
 NA replaced phyloseq object
@@ -23,7 +23,7 @@ Replace any NAs in taxonomy_table (phyloseq) with known higher level taxonomic d
 Version log:
 version 1: 20200728
 version 2: 20211210 added support species and checks for presence of tax prefix and fixed non-NA issues.
-version 3: 20240206 added convenienc taxonomic column GenusSpecies. Fill with Genus+species is species avail (without g__ s__) or with "Genus \link{genus} etc all levels"
+version 3: 20240206 added convenienc taxonomic column GenusSpecies. Fill with Genus+species if species annotation available (without g__ s__) or with "Genus [genus] etc all levels"
 }
 \author{
 a.bossers@uu.nl
