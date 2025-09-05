@@ -1,7 +1,7 @@
 # alxeleratoR 0.8.2.000 (2025-0903)
 
 * Fixed a bug when using log scales in sample_sum_plot(). Thanks to Tirza for reporting and fixing this bug.
-* Many many many roxygen2 documentation issue fixed.
+* Documentation updates.
 * Additional exports of functions added.
 
 # alxeleratoR 0.8.1.000 (2025-04-04)
