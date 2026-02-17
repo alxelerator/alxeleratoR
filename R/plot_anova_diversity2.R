@@ -77,7 +77,7 @@ plot_anova_diversity2 <- function( physeq, method, rarefy.override=0,
   }
   
   # set measure order for panels
-  df$measure <- factor( df$measure, levels=c("Richness","Shannon","Pielou's evenness") )
+  df$measure <- factor( df$measure, levels=c("Richness","Shannon","Pielou's evenness","InvSimpson") )
   
   p <- ggplot( aes_string(x = grouping_column, y = "value",
                          color = grouping_column), data = df )
