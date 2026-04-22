@@ -19,6 +19,9 @@
 #' @param legend.size FOnt size to use in legend. Default 8 pnt.
 #' @param title Any custom to plot on the figure (default generates "Barplot <taxrank> - top<x> taxa")
 #' @param title.center center the title on figure otherwise left adjusted (default=TRUE)
+#' @param show.other when top>0, bundle all non-top taxa into an "Other" category plotted on top of the stack (default TRUE)
+#' @param other.label label to use for the bundled non-top taxa (default "Other")
+#' @param other.color fill color for the "Other" stack (default "white")
 #'
 #' @returns ggplot figure
 #'
@@ -31,6 +34,7 @@
 #' @export
 #' @note
 #'   Updates:
+#'          2026-04-22 alx added grouping of "other" taxa in top-x plots
 #'          2022-07-01 alx added taxglom options to allow visible subtaxonomic ranks per bar.
 #'          2022-05-15 alx added grouping and MEAN grouping options
 #'          2021-xx-xx alx many small tweaks. See git history.
@@ -50,14 +54,10 @@ ps_plot_bar <- function( ps,
                          facet_grid=NULL, NArm=FALSE, 
                          xlab.rel = 0.5,   
                          legend=TRUE, legend.col=1, legend.size=8,
-                         title=paste0("Barplot ", taxrank, " - ", if(top>0){paste0("Top",top)}else{"all taxa"} ), title.center=TRUE 
+                         title=paste0("Barplot ", taxrank, " - ", if(top>0){paste0("Top",top)}else{"all taxa"} ), title.center=TRUE,
+                         show.other=TRUE, other.label="Other", other.color="white"
                        ) {
   
-  require(RColorBrewer)
-  require(pals)
-  require(dplyr)
-  require(phyloseq)
-
   # other custom functions from my toolbox
   #source("tax_glom2.R")
   #source("toptaxa.R")
@@ -113,7 +113,51 @@ ps_plot_bar <- function( ps,
   if(top>0) {
     # make first top x at taxrank
     topx <- toptaxa( ps, rank=taxrank, top=top )
+    
+    # --- Compute per-sample "Other" abundance BEFORE pruning ---
+    # Works for both taxglom=TRUE and taxglom=FALSE paths because the legend/fill
+    # is always at `taxrank` level. We glom at taxrank (if not already) and sum
+    # every taxon that is not in the top-x list, per sample.
+    other_df <- NULL
+    if(show.other) {
+      # Use a glommed-at-taxrank version to compute "Other" cleanly.
+      # If taxglom was TRUE, `ps` is already glommed and shares taxa names with topx.
+      # If taxglom was FALSE, we glom `ps.org` on the fly just for the Other calc.
+      if(taxglom) {
+        ps.for.other <- ps
+      } else {
+        ps.for.other <- tax_glom2( ps.org, taxrank=taxrank, NArm=NArm )
+        # topx references ps (which IS glommed inside toptaxa), so names should align
+      }
+      non_top <- setdiff( taxa_names(ps.for.other), topx )
+      if(length(non_top) > 0) {
+        otu_other <- otu_table(ps.for.other)
+        # phyloseq otu_tables can be taxa-as-rows OR samples-as-rows; normalize.
+        if( taxa_are_rows(ps.for.other) ) {
+          other_sums <- colSums( otu_other[non_top, , drop=FALSE] )
+        } else {
+          other_sums <- rowSums( otu_other[, non_top, drop=FALSE] )
+        }
+        other_df <- data.frame( Sample = names(other_sums),
+                                Abundance = as.numeric(other_sums),
+                                stringsAsFactors = FALSE )
+        # Attach sample metadata so facet_grid / x-axis variables resolve
+        sdat <- as( sample_data(ps.for.other), "data.frame" )
+        sdat$Sample <- rownames(sdat)
+        other_df <- merge( other_df, sdat, by="Sample", all.x=TRUE, sort=FALSE )
+        # Flag to inject the label under the `taxrank` column after plot_bar runs
+        other_df[[taxrank]] <- other.label
+      } else {
+        # nothing to bundle
+        show.other <- FALSE
+      }
+    }
+    # --- end Other pre-compute ---
+    
     ps <- prune_taxa( topx, ps)
+  } else {
+    # top=0 means show everything; nothing to bundle
+    show.other <- FALSE
   }
   
   if(!taxglom) {
@@ -134,17 +178,55 @@ ps_plot_bar <- function( ps,
   
   p <- plot_bar( ps, x=x, y=y, fill=taxrank, title=title, facet_grid=facet_grid )
 
+  # --- Inject "Other" rows into p$data so they appear as an extra stack ---
+  if( show.other && !is.null(other_df) ) {
+    plot_cols <- colnames(p$data)
+    # Build a row template matching p$data columns exactly
+    other_rows <- data.frame( matrix(NA, nrow=nrow(other_df), ncol=length(plot_cols)) )
+    colnames(other_rows) <- plot_cols
+    # Fill in what we have; anything we don't have (e.g. OTU, other tax ranks) stays NA
+    for( cn in plot_cols ) {
+      if( cn %in% colnames(other_df) ) {
+        other_rows[[cn]] <- other_df[[cn]]
+      }
+    }
+    # Make sure taxrank column explicitly carries the Other label
+    other_rows[[taxrank]] <- other.label
+    # Match column types where possible to avoid rbind warnings on factors
+    for( cn in plot_cols ) {
+      if( is.factor(p$data[[cn]]) && !is.factor(other_rows[[cn]]) ) {
+        lv <- levels(p$data[[cn]])
+        other_rows[[cn]] <- factor( other_rows[[cn]], levels=unique(c(lv, other_rows[[cn]])) )
+      }
+    }
+    p$data <- rbind(p$data, other_rows)
+  }
+  # --- end Other injection ---
+
   # sort stacked bars
   if(sort.stack!="FALSE") {
     if(sort.stack=="reverse") {
       warning("reverse sort")
-      p.sort <- p$data %>% group_by( eval(as.name(taxrank)) ) %>% summarise( Avg=mean(Abundance)) %>% arrange( desc(Avg) )
+      p.sort <- p$data %>% group_by( eval(as.name(taxrank)) ) %>% summarise( Avg=mean(Abundance, na.rm=TRUE)) %>% arrange( desc(Avg) )
     } else {
-      p.sort <- p$data %>% group_by( eval(as.name(taxrank)) ) %>% summarise( Avg=mean(Abundance)) %>% arrange( Avg )
+      p.sort <- p$data %>% group_by( eval(as.name(taxrank)) ) %>% summarise( Avg=mean(Abundance, na.rm=TRUE)) %>% arrange( Avg )
     }
       colnames(p.sort) <- c(taxrank,"Avg")
-      p.sort
-      p$data[taxrank] <- factor( p$data[[taxrank]], levels=p.sort[[taxrank]] )
+      # Force "Other" to the FIRST factor level so it ends up on top of the stack.
+      # ggplot2's position_stack() stacks values in REVERSE order of the group aesthetic,
+      # meaning the first factor level is drawn on top, the last level at the bottom.
+      if(show.other) {
+        lv <- p.sort[[taxrank]]
+        lv <- c( other.label, setdiff(lv, other.label) )
+        p$data[taxrank] <- factor( p$data[[taxrank]], levels=lv )
+      } else {
+        p$data[taxrank] <- factor( p$data[[taxrank]], levels=p.sort[[taxrank]] )
+      }
+  } else if(show.other) {
+    # even without sort.stack, ensure Other lands on top
+    current_levels <- unique(as.character(p$data[[taxrank]]))
+    lv <- c( other.label, setdiff(current_levels, other.label) )
+    p$data[taxrank] <- factor( p$data[[taxrank]], levels=lv )
   }
   
   # generate alternating color palette
@@ -153,7 +235,13 @@ ps_plot_bar <- function( ps,
     colpalette <- colorDistinct(n=top)
   } else {
     numcol <- length(levels(p$data[,taxrank])) # if not enough cols and NAs then +1...
+    if(show.other) numcol <- numcol - 1  # reserve one slot; Other gets its own color
     colpalette <- colorDistinct(n=numcol)
+  }
+  # Prepend the Other color at the START so it matches the FIRST factor level
+  # (Other is placed first so it stacks on top; see position_stack reverse behaviour above)
+  if(show.other) {
+    colpalette <- c(other.color, colpalette)
   }
   p <- p + scale_fill_manual(values = colpalette ) +
     theme( text = element_text(size=10),
@@ -192,7 +280,6 @@ ps_plot_bar <- function( ps,
   if(logy){
     p <- p + scale_y_continuous(trans='log10') + ylab("Log10(Abundance)")
   }
-
 
   return(p)
 }
