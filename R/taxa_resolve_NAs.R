@@ -19,9 +19,6 @@
 
 taxa_resolve_NAs <- function( ps, verbose=TRUE, genusspecies=TRUE ) {
   
-  require(phyloseq)
-  require(dplyr)
-  
   ## missing data at taxa level x (NA) can be filled with taxa data from taxa level x-1
 
   taxorg <- data.frame( tax_table( ps ) )

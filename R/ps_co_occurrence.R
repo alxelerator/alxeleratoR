@@ -41,8 +41,6 @@ ps_co_occurrence <- function( ps_x='', ps_y='',
                               method="spearman", alternative='two.sided', exact=FALSE, adjust="BH",
                               rho.filt=0.6, p.filt=0.01, filt_zero=TRUE, verbose=TRUE ) 
 {
-  require(phyloseq)
-  
   # check input params
   if ( is(ps_x,"phyloseq") ) {
     a = ps_x

@@ -20,9 +20,6 @@
 
 alpha_div <- function (physeq, method, rarefy.override=0 )
 {
-  require(phyloseq)
-  require(vegan)
-
   method <- match.arg(method, c("richness", "fisher", "simpson", "invsimpson",
                                 "shannon", "evenness", "pd"), several.ok = TRUE)
   

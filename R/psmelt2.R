@@ -69,9 +69,6 @@
 #'
 psmelt2 = function(physeq){
 
-  require(phyloseq)
-  require(dplyr)
-  
   # Access covariate names from object, if present
   if(!inherits(physeq, "phyloseq")){
     rankNames = NULL

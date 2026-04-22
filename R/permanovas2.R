@@ -28,9 +28,6 @@
 #'
 permanovas2 <- function(physeq, distm="bray", perms=999, vars="", hellinger=TRUE, rngseed=2202, verbose=TRUE ) {
 
-  require(phyloseq)
-  require(vegan)
-
   if( vars[1] == "" ) {
     vars <- as.data.frame(lapply(as.data.frame(as.matrix(sample_data(physeq))), factor))
   } else {

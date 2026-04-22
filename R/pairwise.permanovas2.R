@@ -21,6 +21,7 @@
 #' @import phyloseq
 #' @import vegan
 #' @import parallel
+#' @importFrom cluster daisy
 #'
 #' @examples
 #' #library(phyloseq)
@@ -47,9 +48,6 @@ pairwise.permanovas2 <- function( ps, variable, sim.function = 'vegdist', sim.me
                                   p.adjust.m ='BH', hellinger=TRUE, 
                                   rngseed=2202, num.cores="", ...)
 {
-  require(vegan)
-  require(parallel)
-  
 factors <- sample_data(ps)[[variable]]
 
 if( taxa_are_rows(ps) ) {
@@ -73,7 +71,7 @@ for( elem in 1:ncol(co) ) {
   otutab = x[factors %in% c(co[1,elem],co[2,elem]),]
   if(sim.function == 'daisy'){
     message( paste0("Using DAISY function and method ",sim.method) )
-    library(cluster); distn = daisy(otutab,metric=sim.method)
+    distn = cluster::daisy(otutab, metric=sim.method)
   } else {
     if(hellinger) {
       message( paste0("Using Hellinger transformed data and vegdist() distance metric '",sim.method,"'") )

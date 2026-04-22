@@ -25,8 +25,6 @@ plot_procrustes <- function (x, kind = 1, choices = c(1, 2), to.target = TRUE, t
                              xlab, ylab, main="Procrustes plot", len = 0.05, cex = 0.7, arc.col="blue",
                              ...)
 {
-  require(vegan)
-
   type <- match.arg(type, c("points", "text", "none"))
   if (to.target) {
     tails <- x$Yrot[, choices]
@@ -46,7 +44,7 @@ plot_procrustes <- function (x, kind = 1, choices = c(1, 2), to.target = TRUE, t
       ylab <- paste("Dimension", choices[2])
     xrange <- range(tails[, 1], heads[, 1]) #These are the ranges of the plot
     yrange <- range(tails[, 2], heads[, 2]) #These are the ranges of the plot
-    plot(xrange, yrange, xlab = xlab, ylab = ylab, main = main, arc.col=cols_t,
+    plot(xrange, yrange, xlab = xlab, ylab = ylab, main = main,
          type = "n", asp = 1, lwd=5, ...)
     if (kind > 0) {
       abline(v = 0, lty = 3, lwd=1.5) #Abline vertical, changed also ltp
@@ -76,11 +74,11 @@ plot_procrustes <- function (x, kind = 1, choices = c(1, 2), to.target = TRUE, t
       }
       if (type != "none") {
         ow <- options(warn = -1)
-        arrows(tails[, 1], tails[, 2], heads[, 1], heads[, 2], lwd=2, col = cols_t, len = len, ...) #Add arrows
+        arrows(tails[, 1], tails[, 2], heads[, 1], heads[, 2], lwd=2, col = arc.col, len = len, ...) #Add arrows
         options(ow)
         if (type == "text" && !is.null(rownames(tails)))
-          ordilabel(tails, cex = cex, pch=19, col = cols_t, ...)
-        else points(tails, cex = cex, pch=19, col = cols_t, ...)
+          ordilabel(tails, cex = cex, pch=19, col = arc.col, ...)
+        else points(tails, cex = cex, pch=19, col = arc.col, ...)
       }
     }
     out <- list(heads = heads, points = tails)

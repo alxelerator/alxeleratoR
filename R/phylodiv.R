@@ -15,7 +15,6 @@
 #' @author Alex Bossers \email{a.bossers@uu.nl}
 
 phylodiv <- function(physeq, theta = 0) {
-    require(phyloseq)
     count_to_prop <- function(x) {x/sum(x)}
     physeq <- transform_sample_counts(physeq, count_to_prop)
     x <- as(otu_table(physeq), "matrix")

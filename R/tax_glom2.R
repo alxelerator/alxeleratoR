@@ -74,9 +74,6 @@
 tax_glom2 <- function(physeq, taxrank=rank_names(physeq)[1],
                      NArm=FALSE, bad_empty=c(NA, "", " ", "\t")){
   
-  require(phyloseq)
-  require(dplyr)
-  
   #### This part is identical to phyloseq's tax_glom
   # Error if tax_table slot is empty
   if( is.null(access(physeq, "tax_table")) ){

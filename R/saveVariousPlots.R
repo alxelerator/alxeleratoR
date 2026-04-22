@@ -28,7 +28,6 @@
 # Alex Saves ggplot plots with reasonable defaults in png and svg using cowplot
 SaveVariousPlots <- function(filename_base="", plotobj, scale = 1.5, width = 40, height = 20, units = "cm" , bg_png="white", filetype="")
     {
-    	require(ggplot2)
     	if( filetype > "" ) {
     		# only save in specified format
     		if( filetype == "png" | filetype == ".png" | filetype == ".PNG" ) {

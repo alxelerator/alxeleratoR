@@ -28,7 +28,10 @@ ps_plot_bar(
     else {
      "all taxa"
  }),
-  title.center = TRUE
+  title.center = TRUE,
+  show.other = TRUE,
+  other.label = "Other",
+  other.color = "white"
 )
 }
 \arguments{
@@ -69,6 +72,12 @@ ps_plot_bar(
 \item{title}{Any custom to plot on the figure (default generates "Barplot \if{html}{\out{<taxrank>}} - top\if{html}{\out{<x>}} taxa")}
 
 \item{title.center}{center the title on figure otherwise left adjusted (default=TRUE)}
+
+\item{show.other}{when top>0, bundle all non-top taxa into an "Other" category plotted on top of the stack (default TRUE)}
+
+\item{other.label}{label to use for the bundled non-top taxa (default "Other")}
+
+\item{other.color}{fill color for the "Other" stack (default "white")}
 }
 \value{
 ggplot figure
@@ -78,6 +87,7 @@ Convenience wrapper to generate tuned and sorted barplots at various taxonomic l
 }
 \note{
 Updates:
+2026-04-22 alx added grouping of "other" taxa in top-x plots
 2022-07-01 alx added taxglom options to allow visible subtaxonomic ranks per bar.
 2022-05-15 alx added grouping and MEAN grouping options
 2021-xx-xx alx many small tweaks. See git history.

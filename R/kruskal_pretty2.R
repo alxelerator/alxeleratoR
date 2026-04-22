@@ -40,8 +40,6 @@
 #' 
 
 kruskal.pretty2 = function( ps, csv, interesting, output_name, taxrank='' ){
-  library(vegan)
-  library(dplyr)
 
   # ps=merged.bac.nr.contact.5k.r.clean
   # csv=contact.simp1

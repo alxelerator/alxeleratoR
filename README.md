@@ -72,7 +72,7 @@ toptaxa() | Returns the top-x list of taxa names at given rank for given samples
 write.tsv() | Write data.frame to file using tabular tab separators.
 
 ## Credits
-ToDo overview to credit initially scavenged functions (used as a basis for some provided functions here).
+Credits go to the individual original authors of a few scavenged but changed functions (see the details of these functions).
 
 ## License
 This project is licensed under the [GNU General Public License](https://www.gnu.org/licenses/gpl-3.0.html). You are free to use, modify, and distribute this package as long as you adhere to the terms of the license.  

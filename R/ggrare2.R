@@ -46,10 +46,6 @@
  
 ggrare2 <- function(physeq, step = 0, label = NULL, labelsize = 4, color = NULL, plot = FALSE, parallel = TRUE, se = FALSE ) {
 
-  	require(vegan)
-    require(parallel)
-    require(phyloseq)
-
     #determine auto step-size if none given
     if( step == 0 ) { 
         maxsamsum <- max( sample_sums(physeq) )

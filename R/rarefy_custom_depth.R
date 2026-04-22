@@ -15,7 +15,6 @@
 #'  versiondate: 20201112
 #'
 #' @import phyloseq
-#' @export
 
 
 rarefy_custom_depth <- function( physeq, rarefy_depth, seed=2202 ) {

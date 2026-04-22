@@ -15,10 +15,6 @@
 #' @import openssl
 #'
 shortASVs <- function( ps, in.taxonomy=TRUE, method="hash" ) {
-  require(Biostrings)
-  require(phyloseq)
-  require(openssl)
-
   # first check if sequences are still taxa_names. Else abort.
   if( ! all( grepl( "^[GATCNgatcn]+$", taxa_names(ps) ) ) ) {
     stop("Other characters then nucleotides (AGCTN) found in taxa_names. Are you sure the taxa_names haven't been converted before?")

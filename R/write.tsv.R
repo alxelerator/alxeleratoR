@@ -10,7 +10,6 @@
 #' @author Alex Bossers \email{a.bossers@uu.nl}
 write.tsv <- function( dataToWrite, filename, sep = "\t", quote = FALSE, row.names=TRUE )
 {
-    require(utils)
 	write.table( dataToWrite, filename, sep=sep, quote=quote, row.names=row.names )
 }
 

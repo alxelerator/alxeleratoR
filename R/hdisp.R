@@ -26,9 +26,6 @@
 #' @note Alx: added return list incl p-values
 #'
 hdisp <- function(physeq, distm="bray", vars=NULL, hellinger=TRUE) {
-  require(foreach)
-  require(phyloseq)
-  require(vegan)
   if( length(vars) > 0 ) {
     #subset the variables from metadata
     cat("Subsetting selected metadata variables!\n")

@@ -60,8 +60,6 @@
 
 simper.pretty2 <- function( ps, interesting, perc_cutoff, low_cutoff, low_val, output_name, cores=detectCores()-2 ) {
 
-  require(vegan)
-
   # we expect a PS object so we do not need to transpose the OTU table since ASVs are column headers and samples are rows
   if (ps@otu_table@taxa_are_rows == TRUE ) {
     x = t( data.frame( otu_table(ps) ) )

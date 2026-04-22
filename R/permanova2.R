@@ -32,11 +32,6 @@
 #'
 permanova2 <- function(physeq="", distm="bray", formula="", var="", permutations=999, hellinger=TRUE, rngseed=2202, ...) {
 
-  require(phyloseq)
-  require(vegan)
-  require(stringr)
-  require(dplyr)
-  
   if( class(physeq)[1] != "phyloseq" ) {
     stop("Required phyloseq object is missing.")
   }

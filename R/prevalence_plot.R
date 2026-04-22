@@ -34,8 +34,6 @@ prevalence_plot <- function( ps, rank = "Phylum",
                              title = paste0( "Taxa (",rank,") prevalence over all samples (Nsamples=",nsamples(ps),")" ) 
                             )
 {
-    require(phyloseq)
-    require(ggplot2)
     prevdf <- prevalence_taxa( ps, prev_relative = yrelative )  #rank variable deprecated in this function
     plotobj <- ggplot(prevdf, aes(TotalAbundance,
                                   Prevalence,

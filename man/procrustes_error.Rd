@@ -4,7 +4,12 @@
 \alias{procrustes_error}
 \title{Plot calculated procrustes residuals}
 \usage{
-procrustes_error(df = "", proc_df, main = "Procrustes residuals")
+procrustes_error(
+  df = "",
+  proc_df,
+  main = "Procrustes residuals",
+  col = "black"
+)
 }
 \arguments{
 \item{df}{\if{html}{\out{<deprecated>}} do not use. For backward compatibility only.}
@@ -12,6 +17,8 @@ procrustes_error(df = "", proc_df, main = "Procrustes residuals")
 \item{proc_df}{the procrustus data frame (from vegan)}
 
 \item{main}{Title to the plot}
+
+\item{col}{Color for the residual lines. Default "black".}
 }
 \value{
 Base R plot

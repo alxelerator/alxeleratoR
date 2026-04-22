@@ -1,4 +1,8 @@
-# alxeleratoR 0.8.2.000 (2025-0903)
+# alxeleratoR 0.8.3.000 (2026-04-22)
+
+* Added functionality to ps_plot_bar to add "other" taxon category in top-x plots
+
+# alxeleratoR 0.8.2.000 (2025-09-03)
 
 * Fixed a bug when using log scales in sample_sum_plot(). Thanks to Tirza for reporting and fixing this bug.
 * Fixed many roxygen2 function documentation issues.

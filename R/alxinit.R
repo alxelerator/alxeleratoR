@@ -12,7 +12,6 @@
 alxinit <- function(){
   
   # theme
-  suppressWarnings(library(cowplot))
   theme_set(theme_cowplot())
 
   # convenience

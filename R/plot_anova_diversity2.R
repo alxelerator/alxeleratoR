@@ -46,11 +46,6 @@ plot_anova_diversity2 <- function( physeq, method, rarefy.override=0,
                                    type="violin", whisker=FALSE, jitter=TRUE, alpha=0.3, x.angle=0, 
                                    title="", outfile="")
 {
-  require(phyloseq)
-  require(dplyr)
-  require(rstatix) #function for Welch ANOVA
-  
-
   if (taxa_are_rows(physeq)) {
     physeq <- t(physeq)
   }

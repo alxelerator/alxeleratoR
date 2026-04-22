@@ -22,8 +22,6 @@
 
 perform_anova <-  function (df, meta_table, grouping_column, pValueCutoff=0.05, anova.type="anova" )
   {
-  require(rstatix) #package is required for the welch anova option.
-    
   if( ! anova.type %in% c("anova","welch") ) {
     warning("Unsupported anova method specified. Should be one of 'anova' or 'welch'. Defaulting to classic ANOVA.\n")
   }  

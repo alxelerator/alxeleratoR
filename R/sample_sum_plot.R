@@ -27,10 +27,6 @@ sample_sum_plot <- function( ps, percentKeep = 90, cutoff = FALSE, numberKeep = 
                              logy=TRUE, color="", size.points=3,
                              stats=TRUE, subtitle="", crosshair=TRUE, xlab.rel = 0.8, namesColumn="" )
 {
-  require(phyloseq)
-  require(ggplot2)
-  require(scales)
-
   samsums <- data.frame( samsums = sample_sums(ps) )
   samsums.median <- median( samsums$samsums )
   samsums.max <- max(samsums$samsums)

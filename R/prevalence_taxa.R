@@ -21,7 +21,6 @@
 #' @import phyloseq
 
 prevalence_taxa <- function( ps, prev_relative = FALSE ) {
-    require(phyloseq)
     # variable rank deprecated.
     if ( prev_relative ) {
         correctionfactor = nsamples( ps )

@@ -14,7 +14,6 @@
 
 
 toptaxa <- function( ps, rank="Phylum", top=10, samples=NA, NArm=FALSE ) {
-  require(phyloseq)
   if( ! is.na(samples[1]) ) {
     pstemp = prune_samples( samples, ps)
   } else {
