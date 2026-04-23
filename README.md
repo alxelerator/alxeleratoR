@@ -16,6 +16,10 @@ This package/repository is maintained by:
 
 Any additions or bug fixes are more than welcome!  
 
+## Examples of use
+
+Checkout our [github wiki page here](https://github.com/alxelerator/alxeleratoR/wiki/Examples) to see some features of the package in action!
+
 ## Disclaimer
 This package are primarily tailored to my own needs and may be subject to changes. While I will strive to ensure backward compatibility, this is not guaranteed (including preservation of defaults).  
 
