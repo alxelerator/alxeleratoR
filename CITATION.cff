@@ -7,6 +7,7 @@ authors:
 - family-names: "Scherpenisse"
   given-names: "Peter"
 title: "alxeleratoR"
+doi: 10.5281/zenodo.20555671
 version: 0.8.3.9001
 date-released: 2025-04-10
 url: "https://github.com/alxelerator/alxeleratoR"
