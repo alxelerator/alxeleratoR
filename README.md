@@ -1,3 +1,4 @@
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20555671.svg)](https://doi.org/10.5281/zenodo.20555671)
 # alxeleratoR
 
 Public R package to **accelerate** data analysis, so you can focus on interpretation during data exploration instead of finding out how to code your question to ask to `phyloseq` objects.  
