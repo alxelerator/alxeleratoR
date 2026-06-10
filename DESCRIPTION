@@ -1,6 +1,6 @@
 Package: alxeleratoR
 Title: Accelerated phyloseq Data Analysis
-Version: 0.8.3.9000
+Version: 0.8.3.9001
 Authors@R: c(
     person("Alex", "Bossers",
            role = c("aut", "cre"),
