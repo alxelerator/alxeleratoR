@@ -39,7 +39,7 @@ shortASVs <- function( ps, in.taxonomy=TRUE, method="hash" ) {
     taxa_names(ps) <- paste0( "ASV", sprintf( paste0( '%0.',taxadigits,'d' ), 1:ntaxa(ps) ) )
   } else {
     # all other cases use default md5 hash method
-    taxa_names(ps) <- paste0( "ASV_", openssl::md5(taxa_names(ps)) )
+    taxa_names(ps) <- paste0( "ASV_", md5(taxa_names(ps)) )
   }
 
   cat("Sequences as taxa_names converted to something more convenient...")

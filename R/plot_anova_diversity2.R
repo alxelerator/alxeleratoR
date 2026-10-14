@@ -19,6 +19,7 @@
 #'
 #' @import phyloseq
 #' @import dplyr
+#' @import ggplot2
 #' @import rstatix
 #' @export
 #'

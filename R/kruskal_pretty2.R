@@ -176,7 +176,7 @@ kruskal.pretty2 = function( ps, csv, interesting, output_name, taxrank='' ){
   #adjusted p-values for multiple comparisons
   fdr=p.adjust(krusk, method='fdr')
   #order csv to match 'krusk'/'fdr' list, add p.val, add taxonomy, re-ord to match orig csv, write to csv
-  o_csv=dplyr::arrange(csv, Comparison)
+  o_csv=arrange(csv, Comparison)
   o_csv[,5]=krusk
   o_csv[,6]=fdr
   o_csv[,7]=tax
@@ -184,7 +184,7 @@ kruskal.pretty2 = function( ps, csv, interesting, output_name, taxrank='' ){
   o_csv[,9]=L_sd
   o_csv[,10]=R_mean
   o_csv[,11]=R_sd
-  o_csv=dplyr::arrange(o_csv, X)
+  o_csv=arrange(o_csv, X)
   colnames(o_csv)[which(names(o_csv) == "V5")] <- "krusk_p.val" #changes column header
   colnames(o_csv)[which(names(o_csv) == "V6")] <- "fdr_krusk_p.val"
   colnames(o_csv)[which(names(o_csv) == "V7")] <- "Taxonomy"

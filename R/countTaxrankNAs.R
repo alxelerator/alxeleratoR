@@ -6,6 +6,8 @@
 #' @param filename Optional filename and path if you want to save the output
 #' @return data frame
 #' @import phyloseq
+#' @import dplyr
+#' @importFrom tibble rownames_to_column
 #' @export
 #' @author Alex Bossers \email{a.bossers@uu.nl}
 #'
@@ -17,9 +19,9 @@ countTaxrankNAs <- function( ps, filename="" )
   overall <- data.frame(NtaxaNAs=natax, percNAs=perctax) %>% rownames_to_column("TaxRank")
   cat( paste0("Total of ASVs = ",tottax[1],"\n"))
   if( filename > "") { 
-      write_tsv(overall, paste0(filename)) 
+      write.tsv(overall, paste0(filename), row.names=FALSE)
     } else {
-      write_tsv(overall, "TotalNAtaxaAtTaxonomicLevelsOverall.tab") 
+      write.tsv(overall, "TotalNAtaxaAtTaxonomicLevelsOverall.tab", row.names=FALSE)
     }
   return(overall)
 }

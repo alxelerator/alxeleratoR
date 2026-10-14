@@ -55,6 +55,7 @@
 #' @import vegan
 #' @import dplyr
 #' @import reshape2
+#' @import parallel
 
 
 

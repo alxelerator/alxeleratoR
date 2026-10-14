@@ -56,6 +56,7 @@
 #' @export
 #' @import phyloseq
 #' @import dplyr
+#' @importFrom tibble as_tibble add_column
 #'
 #' @examples
 #' # library(phyloseq)
@@ -109,11 +110,11 @@ tax_glom2 <- function(physeq, taxrank=rank_names(physeq)[1],
   otu <- otu_table(physeq)
   tb <- otu %>%
     as("matrix") %>%
-    tibble::as_tibble(rownames = "OTU")
+    as_tibble(rownames = "OTU")
   # We want to name each new taxon (group of merged OTUs) by its "archetype",
   # the most abundant OTU in the group
   tb <- tb %>%
-    tibble::add_column(Tax = tax, Sum = taxa_sums(physeq)) %>%
+    add_column(Tax = tax, Sum = taxa_sums(physeq)) %>%
     dplyr::group_by(Tax)
   # Name new taxa by the most abundant OTU; pick the first OTU in case of
   # ties (to be consistent with phyloseq)

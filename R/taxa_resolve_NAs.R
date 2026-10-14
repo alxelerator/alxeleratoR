@@ -15,6 +15,7 @@
 #' 
 #' @import phyloseq
 #' @import vegan
+#' @import dplyr
 #' @export
 
 taxa_resolve_NAs <- function( ps, verbose=TRUE, genusspecies=TRUE ) {

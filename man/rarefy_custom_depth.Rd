@@ -2,29 +2,35 @@
 % Please edit documentation in R/rarefy_custom_depth.R
 \name{rarefy_custom_depth}
 \alias{rarefy_custom_depth}
-\title{Convenience function to rarefy a given phyloseq object not to one value for each sample but to allow to rarefy each sample with its own given rarefy target depth.}
+\title{Rarefy each sample in a phyloseq object to its own target depth}
 \usage{
 rarefy_custom_depth(physeq, rarefy_depth, seed = 2202)
 }
 \arguments{
 \item{physeq}{phyloseq object containing at least 2 samples}
 
-\item{rarefy_depth}{vector of counts per sample to target rarefy (match sample order!)}
+\item{rarefy_depth}{integer vector of target read counts, one per sample,
+in the same order as sample_names(physeq)}
 
-\item{seed}{which random seed to use}
+\item{seed}{random seed for reproducibility (default 2202)}
 }
 \value{
-m.final rarefied phyloseq object
+phyloseq object with each sample rarefied to its target depth.
+All other slots (tax_table, sample_data, phy_tree, refseq) are preserved
+from the input object.
 }
 \description{
-Why? In the exceptional case when you want to proportionally rarefy the data to correct for instance for input volume differences
-which may be the case in semi-quantitative measurements of the resistome. Since with resistome for example we do not always want to
-work with relative abundances (100\%) and maintaining the ARG total load per sample (FPK or FPKM similar).
+Rarefies each sample to an individually specified depth rather than a single
+shared value. Useful when correcting for input volume differences in
+semi-quantitative data (e.g. resistome FPK/FPKM), where relative abundances
+are not the desired output.
 }
 \note{
-version: 1.1
-versiondate: 20201112
+version: 2.0
+versiondate: 2026-07-01
+Rewrote loop using lapply + matrix combine to avoid S4 scoping issue
+where iterative merge_phyloseq inside a function only returned the last sample.
 }
 \author{
-: a.bossers\@uu.nl
+a.bossers@uu.nl
 }

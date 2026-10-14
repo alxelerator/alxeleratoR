@@ -20,6 +20,7 @@ ps_plot_bar(
   NArm = FALSE,
   xlab.rel = 0.5,
   legend = TRUE,
+  useItalicRanks = TRUE,
   legend.col = 1,
   legend.size = 8,
   title = paste0("Barplot ", taxrank, " - ", if (top > 0) {
@@ -65,9 +66,13 @@ ps_plot_bar(
 
 \item{legend}{default TRUE. Turn off the legend if set to FALSE}
 
+\item{useItalicRanks}{default TRUE. Automatically formats genus and Species taxonomic names italic. Respects the [taxrank] and keeps thos plain. Exclusion of italics is automatically true for higher taxranks (also when supplied in [ ] at the end).
+
+[ ]: R:\%20}
+
 \item{legend.col}{How many columns the legend may contain (default legend.col=1)}
 
-\item{legend.size}{FOnt size to use in legend. Default 8 pnt.}
+\item{legend.size}{Font size to use in legend. Default 8 pnt.}
 
 \item{title}{Any custom to plot on the figure (default generates "Barplot \if{html}{\out{<taxrank>}} - top\if{html}{\out{<x>}} taxa")}
 
@@ -87,6 +92,7 @@ Convenience wrapper to generate tuned and sorted barplots at various taxonomic l
 }
 \note{
 Updates:
+2026-10-14 Alx add auto italic formatting Genus/Species taxonomy names.
 2026-04-22 alx added grouping of "other" taxa in top-x plots
 2022-07-01 alx added taxglom options to allow visible subtaxonomic ranks per bar.
 2022-05-15 alx added grouping and MEAN grouping options

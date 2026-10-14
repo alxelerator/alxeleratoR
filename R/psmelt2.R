@@ -49,6 +49,8 @@
 #' @export
 #' @import phyloseq
 #' @import dplyr
+#' @importFrom tibble as_tibble
+#' @importFrom tidyr gather
 #'
 #' @note
 #' TODO: test behavior vs. original phyloseq function psmelt
@@ -133,32 +135,32 @@ psmelt2 = function(physeq){
   # per row)
   tb <- otutab %>%
     as("matrix") %>%
-    tibble::as_tibble(rownames = "OTU") %>%
-    tidyr::gather("Sample", "Abundance", -OTU)
+    as_tibble(rownames = "OTU") %>%
+    gather("Sample", "Abundance", -OTU)
   # Add the sample data if it exists
   if (!is.null(sampleVars)) {
     sam <- sample_data(physeq) %>%
       as("data.frame") %>%
-      tibble::as_tibble(rownames = "Sample")
+      as_tibble(rownames = "Sample")
     tb <- tb %>%
-      dplyr::left_join(sam, by = "Sample")
+      left_join(sam, by = "Sample")
   }
   # Add the tax table if it exists
   if (!is.null(rankNames)) {
     tax <- tax_table(physeq) %>%
       as("matrix") %>%
-      tibble::as_tibble(rownames = "OTU")
+      as_tibble(rownames = "OTU")
     # Convert taxonomy vars to factors for phyloseq compatibiiity
     if (getOption("stringsAsFactors")) {
       tax <- tax %>%
-        dplyr::mutate_at(dplyr::vars(-OTU), as.factor)
+        mutate_at(vars(-OTU), as.factor)
     }
     tb <- tb %>%
-      dplyr::left_join(tax, by = "OTU")
+      left_join(tax, by = "OTU")
   }
   # Arrange by Abundance; TODO: verify this sorting behavior matches phyloseq's
   tb <- tb %>%
-    dplyr::arrange(desc(Abundance))
+    arrange(desc(Abundance))
   # Return as a data.frame for phyloseq compatibility
   tb %>% as.data.frame
 }

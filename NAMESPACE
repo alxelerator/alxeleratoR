@@ -23,7 +23,9 @@ export(prevalence_taxa)
 export(procrustes_error)
 export(ps_co_occurrence)
 export(ps_plot_bar)
+export(ps_plot_sankey)
 export(psmelt2)
+export(rarefy_custom_depth)
 export(sample_sum_plot)
 export(short.tn)
 export(shortASVs)
@@ -37,15 +39,36 @@ import(cowplot)
 import(dplyr)
 import(foreach)
 import(ggplot2)
+import(ggtext)
 import(openssl)
 import(pals)
 import(parallel)
 import(phyloseq)
 import(reshape2)
 import(rstatix)
+import(sankey)
 import(scales)
 import(stringr)
 import(utils)
 import(vegan)
 importFrom(Biostrings,DNAStringSet)
 importFrom(cluster,daisy)
+importFrom(grDevices,
+  adjustcolor,
+  dev.off,
+  png,
+  svg
+)
+importFrom(graphics,
+  legend,
+  title
+)
+importFrom(lubridate,today)
+importFrom(stats,median)
+importFrom(tibble,
+  add_column,
+  as_tibble,
+  rownames_to_column
+)
+importFrom(tidyr,gather)
+importFrom(tools,file_ext)

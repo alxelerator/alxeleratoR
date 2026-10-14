@@ -4,6 +4,7 @@
 #' @author Alex Bossers \email{a.bossers@uu.nl}
 #' 
 #' @import cowplot
+#' @importFrom lubridate today
 #' @export
 #' @note
 #'   Updates:
@@ -15,7 +16,7 @@ alxinit <- function(){
   theme_set(theme_cowplot())
 
   # convenience
-  today <- lubridate::today()
+  today <- today()
 
   # find home
   if(.Platform$OS.type == "unix") {

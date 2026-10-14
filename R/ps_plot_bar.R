@@ -15,8 +15,9 @@
 #' @param NArm whether or not to remove NAs in the data while agglomerating at given taxonomic rank (default NArm=FALSE)
 #' @param xlab.rel Tweaked size of x-axis labels since readability depends on N samples (default xlab.rel=0.5)
 #' @param legend default TRUE. Turn off the legend if set to FALSE
+#' @param useItalicRanks default TRUE. Automatically formats genus and Species taxonomic names italic. Respects the \[taxrank\] and keeps thos plain. Exclusion of italics is automatically true for higher taxranks (also when supplied in [ ] at the end).
 #' @param legend.col How many columns the legend may contain (default legend.col=1)
-#' @param legend.size FOnt size to use in legend. Default 8 pnt.
+#' @param legend.size Font size to use in legend. Default 8 pnt.
 #' @param title Any custom to plot on the figure (default generates "Barplot <taxrank> - top<x> taxa")
 #' @param title.center center the title on figure otherwise left adjusted (default=TRUE)
 #' @param show.other when top>0, bundle all non-top taxa into an "Other" category plotted on top of the stack (default TRUE)
@@ -31,9 +32,12 @@
 #' @import pals
 #' @import phyloseq
 #' @import dplyr
+#' @import ggplot2
+#' @import ggtext
 #' @export
 #' @note
 #'   Updates:
+#'          2026-10-14 Alx add auto italic formatting Genus/Species taxonomy names.
 #'          2026-04-22 alx added grouping of "other" taxa in top-x plots
 #'          2022-07-01 alx added taxglom options to allow visible subtaxonomic ranks per bar.
 #'          2022-05-15 alx added grouping and MEAN grouping options
@@ -53,17 +57,11 @@ ps_plot_bar <- function( ps,
                          logy=FALSE, 
                          facet_grid=NULL, NArm=FALSE, 
                          xlab.rel = 0.5,   
-                         legend=TRUE, legend.col=1, legend.size=8,
+                         legend=TRUE, useItalicRanks=TRUE, legend.col=1, legend.size=8,
                          title=paste0("Barplot ", taxrank, " - ", if(top>0){paste0("Top",top)}else{"all taxa"} ), title.center=TRUE,
                          show.other=TRUE, other.label="Other", other.color="white"
                        ) {
   
-  # other custom functions from my toolbox
-  #source("tax_glom2.R")
-  #source("toptaxa.R")
-  #source("colorDistinct.R")
-
-
   # first drop zero samplesum samples (throws error otherwise)
   zerosamples <- sum( sample_sums(ps) == 0 )
   if( zerosamples > 0 ) {
@@ -79,7 +77,7 @@ ps_plot_bar <- function( ps,
     if( sum( is.na( sample_data(ps)[,group] ) ) > 0 ) {
       stop("Metadata variable column contains NAs which may cause strange results. Aborting!")
     }
-    ps.tmp <- merge_samples( ps, group=group )
+    ps.tmp <- suppressWarnings( merge_samples(ps, group = group) )
     if( group_fun == "mean" ) {
       # otu table goes default to SUM for otu table. I want to show actual MEAN so correct for sample numbers
       snumbers <- sample_data(ps) %>% group_by_at( group ) %>% count()
@@ -243,13 +241,30 @@ ps_plot_bar <- function( ps,
   if(show.other) {
     colpalette <- c(other.color, colpalette)
   }
-  p <- p + scale_fill_manual(values = colpalette ) +
-    theme( text = element_text(size=10),
-           axis.text.y = element_text( size=8 ) , 
-           axis.text.x = element_text( angle=270, vjust=0.1, hjust=0, size=8 ),
-           legend.title = element_text( size=legend.size, face="bold"),
-           legend.text = element_text( size=legend.size )) +
-    scale_y_continuous(expand = c(0, 0))
+
+  # Make Genus and GenusSpecies italic if no [] or if [Genus]. Rest plain.
+  # useItalicRanks comes from function argument
+  italic_rank <- taxrank %in% c("Genus", "GenusSpecies", "Species")
+  p <- p +
+      scale_fill_manual(
+          values = colpalette,
+          labels = \(x) {
+              x <- str_trim(x)
+              case_when(
+                  useItalicRanks & italic_rank & !str_detect(x, "\\[.*\\]$") ~ paste0("*", x, "*"),
+                  useItalicRanks & str_detect(x, "\\[Genus\\]$") ~ str_replace(x, "^(.*?)\\s*(\\[Genus\\])$", "*\\1* \\2"),
+                  .default = x
+              )
+          }
+      ) +
+      theme(
+          text         = element_text(size = 10),
+          legend.text  = element_markdown(size = legend.size),
+          axis.text.y  = element_text(size = 8),
+          axis.text.x  = element_text(angle = 270, vjust = 0.1, hjust = 0, size = 8),
+          legend.title = element_text(size = legend.size, face = "bold")
+      ) +
+      scale_y_continuous(expand = c(0, 0))
   
   if(legend.col) {
     p <- p + guides( fill=guide_legend(ncol=legend.col) )
