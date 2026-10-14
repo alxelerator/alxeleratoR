@@ -32,7 +32,7 @@ In R run `devtools::install_github("alxelerator/alxeleratoR")`
 After loading the package `library(alxeleratoR)` you can set some convenient defaults using `alxinit()`
 
 If you need to install some missing packages I can strongly recommend the use of BioConductor package management. Install it using `install.packages("BiocManager")` or update using `BiocManager::install()`    
-For instance these packages are required for the full experience `BiocManager::install(c("tidyverse", "phyloseq", "pals", "cowplot", "RColorBrewer", "foreach", "openssl", "Biostrings", "rstatix", "scales", "vegan"))`  
+For instance these packages are required for the full experience `BiocManager::install(c("tidyverse", "phyloseq", "pals", "ggtext", "cowplot", "RColorBrewer", "foreach", "openssl", "Biostrings", "rstatix", "scales", "vegan"))`  
 
 ## Documentation
 Function details are covered by each function's documentation.  
@@ -63,6 +63,7 @@ prevalence_taxa() | Calculate the prevalence at lowest taxonomic rank (i.e. ASV)
 procrustes_error() | Plot calculated procrustes residuals
 ps_co_occurrence() | Calculate the co-occurrence of taxa (pair-wise) between one or two tax tables in phyloseq objects
 ps_plot_bar() | Convenience wrapper to generate tuned and stack-sorted barplots at various taxonomic levels from phyloseq input
+ps_plot_sankey() | Experimental Sankey/alluvial plot of the taxonomic composition data.
 psmelt2() | Phyloseq psmelt() dplyr optimised for large datasets
 rarefy_custom_depth() | Rarefy each sample in a phyloseq object to its own individually specified target depth rather than one shared value.
 sample_sum_plot() | Make a (coloured) ggplot of sample sums per sample ordered decreasing by sample sum and some stats like 90% rarefy number on phyloseq
