@@ -1,10 +1,12 @@
+[![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.20555671-blue.svg)](https://doi.org/10.5281/zenodo.20555671)
+
 # alxeleratoR
 
-Public R package to **accelerate** data analysis, so you can focus on interpretation during data exploration instead of finding out how to code your question.  
+Public R package to **accelerate** data analysis, so you can focus on interpretation during data exploration instead of finding out how to code your question to ask to `phyloseq` objects.  
 
-This "package"/bundle evolved from my own need to automate and share common analyses and visualizations. Most functions require phyloseq or similar data structures. Many functions are wrappers around, or drop-in replacements of, existing functions or packages. Some functions are original creations while others are "borrowed" and adapted to my personal needs (*I tried giving credits as appropriate as possible. If you think I’ve forgotten to credit you, please drop me a message*).  
+This "package"/bundle evolved from my own need to automate and share common analyses and visualizations. Most functions require `phyloseq` or similar data structures. Many functions are wrappers around, or drop-in replacements of, existing functions or packages. Some functions are original creations while others are "borrowed" and adapted to my personal needs (*I tried giving credits as appropriate as possible. If you think I’ve forgotten to credit you, please drop me a message*).  
   
-The primary context of my work is microbiome, resistome, metagenomics, and eDNA research. But feel free to use them in different contexts. Make sure to read the disclaimer and double check functions are fit for its purpose. Outcomes could be erroneous!.  
+The primary context of my work is microbiome, resistome, metagenomics, and eDNA research. But feel free to use them in different contexts. Make sure to read the disclaimer and double check if functions are fit for its purpose. Outcomes could be erroneous!.  
 
 This package/repository is maintained by:  
 * **Alex Bossers** (creator)  
@@ -15,6 +17,10 @@ This package/repository is maintained by:
 * **You?**  
 
 Any additions or bug fixes are more than welcome!  
+
+## Examples of use
+
+Checkout our [github wiki page here](https://github.com/alxelerator/alxeleratoR/wiki) to see some features of the package in action!
 
 ## Disclaimer
 This package are primarily tailored to my own needs and may be subject to changes. While I will strive to ensure backward compatibility, this is not guaranteed (including preservation of defaults).  
